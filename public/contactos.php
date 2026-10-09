@@ -159,7 +159,7 @@ require __DIR__ . '/includes/header.php';
 
         <div class="contact-form-row">
           <div class="contact-form-field">
-            <label for="telefono">Teléfono / Celular</label>
+            <label for="telefono">Celular</label>
             <input id="telefono" name="telefono" type="tel" maxlength="30" autocomplete="tel"
                    placeholder="Ej. 987 654 321" value="<?= $escape($old['telefono']) ?>">
           </div>

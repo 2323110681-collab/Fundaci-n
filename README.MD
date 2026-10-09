@@ -1,4 +1,4 @@
-# Fundación DU
+# Fundación Desarollo Universitaro
 
 Este proyecto es una aplicación web en PHP para gestionar contenido institucional de Fundación DU. Incluye un frontend estático en HTML/CSS/JS y un backend PHP ligero con API REST para noticias, programas, agenda y administración de usuarios.
 
