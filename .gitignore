@@ -1,2 +1,7 @@
+# Bloquear base de datos
 *.sql
-database/*.sql
+database/
+
+# Bloquear documentos o archivos específicos
+documento-personal.txt
+notas/
