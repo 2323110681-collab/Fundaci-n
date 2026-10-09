@@ -1,0 +1,193 @@
+.convenios-page-section {
+  background: #F6F3F2;
+  padding-top: 24px;
+}
+
+body:has(.convenios-page-section) .site-header {
+  position: relative;
+}
+
+.convenios-page-header {
+  margin-bottom: 28px;
+}
+
+.convenios-page-header .page-title {
+  color: var(--navy);
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.convenios-page-header .section-subtitle {
+  max-width: 700px;
+}
+
+.convenios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.convenio-card {
+  background: var(--white);
+  border: 1px solid #C3C6D1;
+  border-radius: var(--radius-sm);
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 34px 1fr;
+  min-height: 190px;
+  padding: 24px;
+}
+
+.convenio-card-number {
+  align-items: center;
+  background: var(--navy);
+  border-radius: 12px;
+  color: var(--white);
+  display: flex;
+  font-size: 12px;
+  height: 32px;
+  justify-content: center;
+  width: 32px;
+}
+
+.convenio-card-type {
+  color: var(--gold-dark);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.convenio-card-image {
+  border-radius: 4px;
+  height: 92px;
+  margin-bottom: 12px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.convenio-card h3 {
+  color: var(--navy);
+  font-size: 19px;
+  line-height: 1.25;
+  margin: 8px 0 10px;
+}
+
+.convenio-card p {
+  color: var(--body-text);
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.convenio-card .convenio-location {
+  color: var(--gold-dark);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.convenios-page-section .pagination {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 900px) {
+  .convenios-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .convenios-page-section {
+    padding: 28px 0 36px;
+  }
+
+  .convenios-page-section .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .convenios-page-header {
+    margin-bottom: 22px;
+  }
+
+  .convenios-page-header .page-title {
+    font-size: clamp(30px, 8vw, 38px);
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+
+  .convenios-page-header .section-subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .convenios-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .convenio-card {
+    gap: 12px;
+    grid-template-columns: 32px minmax(0, 1fr);
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .convenio-card h3 {
+    font-size: 18px;
+    overflow-wrap: anywhere;
+  }
+
+  .convenio-card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* ============================================================
+   MODO OSCURO — html.high-contrast
+   ============================================================ */
+
+html.high-contrast .convenios-page-section {
+  background-color: var(--dk-bg) !important;
+}
+
+html.high-contrast .convenios-page-header .page-title {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .convenios-page-header .section-subtitle {
+  color: var(--dk-text-2) !important;
+}
+
+html.high-contrast .convenio-card {
+  background: var(--dk-surface) !important;
+  border: 1px solid var(--dk-border) !important;
+  color: var(--dk-text) !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+html.high-contrast .convenio-card:hover {
+  border-color: var(--dk-gold) !important;
+}
+
+html.high-contrast .convenio-card h3 {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .convenio-card p {
+  color: var(--dk-text-2) !important;
+}
+
+html.high-contrast .convenio-card-number {
+  background: var(--dk-gold) !important;
+  color: #0F1722 !important;
+}
+
+html.high-contrast .convenio-card-type,
+html.high-contrast .convenio-card .convenio-location {
+  color: var(--dk-gold) !important;
+}

@@ -1,0 +1,299 @@
+.congress-admin-layout{max-width:1400px}
+.congress-admin-workspace{min-width:0}
+.congress-admin-workspace .admin-sidebar-nav .tab-button{text-decoration:none}
+.congress-admin-content{min-width:0}
+.congress-admin-section{background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 1px 2px rgba(15,23,42,.04),0 10px 30px rgba(15,23,42,.05);margin:0 0 20px;padding:26px}
+.congress-admin-section h2{color:#001e40;font-size:1.2rem;font-weight:800;margin:0 0 18px}
+.congress-admin-intro{color:#64748b;font-size:14px;line-height:1.5;margin:-10px 0 18px}
+.congress-admin-section-heading{align-items:center;display:flex;gap:18px;justify-content:space-between;margin-bottom:18px}
+.congress-admin-section-heading h2{margin:0}
+.congress-admin-section-heading p{color:#64748b;font-size:14px;line-height:1.5;margin:5px 0 0}
+.congress-admin-section-heading .btn-secondary{flex:0 0 auto;max-width:100%;white-space:nowrap;width:auto}
+.congress-admin-section .edit-field{min-width:0}
+.congress-admin-section .edit-label{display:block}
+.congress-admin-section .edit-field-wide{grid-column:1/-1}
+.congress-yape-option{align-items:center;display:flex;gap:10px}
+.congress-yape-option input{flex:0 0 auto}
+.fee-row{align-items:end;border-bottom:1px solid #e2e8f0;display:grid;gap:14px;grid-template-columns:minmax(0,1fr) minmax(120px,.55fr) auto;padding:14px 0}
+.fee-row .remove-button{max-width:100%;white-space:nowrap;width:auto}
+.fee-row:first-child{padding-top:0}
+.fee-row:last-child{border-bottom:0}
+.fee-row label{color:#334155;display:grid;font-size:13px;font-weight:600;gap:6px}
+.speaker-card{background:#f8fafc;border:1px solid #dbe3ec;border-radius:14px;margin-top:16px;padding:18px}
+.speaker-card:first-child{margin-top:0}
+.speaker-card-header{align-items:center;border-bottom:1px solid #e2e8f0;display:flex;gap:14px;justify-content:space-between;margin-bottom:16px;padding-bottom:12px}
+.speaker-card-header h3{color:#001e40;font-size:17px;margin:0}
+.speaker-grid{display:grid;gap:16px 20px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.speaker-grid .wide{grid-column:1/-1}
+.speaker-grid label{color:#334155;display:grid;font-size:13px;font-weight:600;gap:6px;min-width:0}
+.speaker-country-field{align-content:start}
+.speaker-country-flag{font-size:20px;min-height:24px}
+.speaker-grid .photo-field{align-content:start}
+.speaker-photo-preview{background:#e8edf2;border:1px solid #dbe3ec;border-radius:10px;display:block;height:150px;margin:0 0 8px;object-fit:cover;width:200px}
+.speaker-photo-preview[hidden]{display:none}
+.speaker-photo-actions{align-items:center;display:flex;flex-wrap:wrap;gap:10px}
+.speaker-photo-picker{cursor:pointer;position:relative}
+.speaker-photo-picker input[type=file]{cursor:pointer;height:1px;opacity:0;overflow:hidden;position:absolute;width:1px}
+.speaker-photo-picker:focus-within{outline:2px solid #fecf4f;outline-offset:3px}
+.speaker-photo-path{min-width:0}
+.speaker-photo-hint{color:#64748b;font-size:12px;font-weight:400;line-height:1.5}
+.congress-logo-field{display:grid;gap:8px}
+.congress-logo-preview{background:#f8fafc;border:1px solid #dbe3ec;border-radius:12px;max-height:220px;max-width:min(100%,320px);object-fit:contain;padding:10px}
+.congress-logo-preview[hidden]{display:none}
+.congress-qr-preview-wrap{display:inline-flex;max-width:100%;position:relative;width:max-content}
+.congress-qr-remove{align-items:center;background:#b42318;border:2px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(15,23,42,.2);color:#fff;cursor:pointer;display:inline-flex;font-size:22px;font-weight:700;height:32px;justify-content:center;line-height:1;position:absolute;right:-10px;top:-10px;width:32px}
+.congress-qr-remove:hover,.congress-qr-remove:focus-visible{background:#8f1c13;outline:2px solid #fecf4f;outline-offset:2px}
+.congress-qr-remove[hidden]{display:none}
+.congress-logo-controls{align-items:center;background:#f8fafc;border:1px solid #dbe3ec;border-radius:12px;display:flex;flex-wrap:wrap;gap:12px;padding:8px 12px}
+.congress-logo-picker{background:#fff;border:1px solid #dbe3ec;border-radius:10px;color:#0f172a;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;position:relative;transition:border-color .2s ease,box-shadow .2s ease}
+.congress-logo-picker:hover{border-color:#b8c6d6}
+.congress-logo-picker input[type=file]{cursor:pointer;height:1px;opacity:0;overflow:hidden;position:absolute;width:1px}
+.congress-logo-picker:focus-within{outline:2px solid #fecf4f;outline-offset:3px}
+.speaker-biography-editor{min-width:0}
+.speaker-biography-editor .ql-toolbar.ql-snow{background:#fff;border:1px solid #cbd5e1;border-radius:10px 10px 0 0}
+.speaker-biography-editor .ql-container.ql-snow{background:#fff;border:1px solid #cbd5e1;border-radius:0 0 10px 10px;border-top:0;font-family:inherit;font-size:14px;height:auto}
+.speaker-biography-editor .ql-editor{color:#0f1f33;min-height:180px;max-height:45vh;overflow-y:auto}
+.speaker-biography-editor .ql-editor img{max-height:280px;max-width:100%;object-fit:contain}
+.speaker-bio-label{display:block;margin-bottom:6px}
+.congress-rich-editor{min-width:0}
+.congress-rich-editor .ql-toolbar.ql-snow{background:#fff;border:1px solid #cbd5e1;border-radius:10px 10px 0 0}
+.congress-rich-editor .ql-container.ql-snow{background:#fff;border:1px solid #cbd5e1;border-radius:0 0 10px 10px;border-top:0;font-family:inherit;font-size:14px;height:auto}
+.congress-rich-editor .ql-editor{color:#0f1f33;min-height:150px;max-height:40vh;overflow-y:auto}
+.sponsor-card{background:#f8fafc;border:1px solid #dbe3ec;border-radius:14px;margin-top:16px;padding:18px}
+.sponsor-card:first-child{margin-top:0}
+.sponsor-card-header{align-items:center;border-bottom:1px solid #e2e8f0;display:flex;gap:14px;justify-content:space-between;margin-bottom:16px;padding-bottom:12px}
+.sponsor-card-header h3{color:#001e40;font-size:17px;margin:0}
+.sponsor-grid{display:grid;gap:16px 20px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.sponsor-grid .wide{grid-column:1/-1}
+.sponsor-grid label{color:#334155;display:grid;font-size:13px;font-weight:600;gap:6px;min-width:0}
+.sponsor-logo-preview{background:#fff;border:1px solid #dbe3ec;border-radius:10px;height:120px;max-width:220px;object-fit:contain;padding:8px;width:100%}
+.sponsor-logo-preview[hidden]{display:none}
+.sponsor-logo-picker{cursor:pointer;position:relative}
+.sponsor-logo-picker input[type=file]{cursor:pointer;height:1px;opacity:0;overflow:hidden;position:absolute;width:1px}
+.sponsor-logo-picker:focus-within{outline:2px solid #fecf4f;outline-offset:3px}
+.sponsor-rich-editor{min-width:0}
+.sponsor-rich-editor .ql-toolbar.ql-snow{background:#fff;border:1px solid #cbd5e1;border-radius:10px 10px 0 0}
+.sponsor-rich-editor .ql-container.ql-snow{background:#fff;border:1px solid #cbd5e1;border-radius:0 0 10px 10px;border-top:0;font-family:inherit;font-size:14px;height:auto}
+.sponsor-rich-editor .ql-editor{color:#0f1f33;min-height:120px;max-height:35vh;overflow-y:auto}
+.congress-country-admin-controls{align-items:end;display:grid;gap:12px;grid-template-columns:minmax(0,1fr) auto;max-width:620px}
+.congress-country-admin-controls .edit-field{flex:1}
+.congress-country-admin-controls .btn-secondary{width:auto;white-space:nowrap}
+.congress-countries-list{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:18px 0 0;padding:0}
+.congress-country-admin-item{align-items:center;background:#f8fafc;border:1px solid #dbe3ec;border-radius:10px;display:flex;gap:12px;padding:8px 10px}
+.congress-country-admin-item .remove-button{padding:6px 10px}
+html.admin-dark .congress-country-admin-item{background:#1b2a31;border-color:#3b5058;color:#e8eef0}
+.congress-admin-actions{gap:12px;justify-content:flex-end}
+.congress-admin-actions .btn-primary,.congress-admin-actions .btn-secondary{align-items:center;display:inline-flex;justify-content:center;text-decoration:none;width:auto}
+.congress-admin-actions .btn-primary{min-width:190px}
+.admin-message{border-radius:10px;margin:0 0 18px;padding:14px 16px}
+.admin-message.error{background:#fff0ee;color:#9c2921}
+.admin-message.success{background:#e8f6ee;color:#17633a}
+.admin-message[hidden]{display:none}
+.congress-list-page .admin-shell{padding:28px}
+.congress-list-heading{align-items:center;display:flex;gap:20px;justify-content:space-between;margin-bottom:20px}
+.congress-list-heading h2{color:#001e40;font-size:1.25rem;font-weight:800;margin:0}
+.congress-list-heading p{color:#64748b;font-size:14px;line-height:1.5;margin:6px 0 0}
+.congress-list-heading .btn-primary{flex:0 0 auto}
+.congress-list{display:grid;gap:12px}
+.congress-list-item{align-items:center;background:#f8fafc;border:1px solid #dbe3ec;border-radius:14px;display:flex;gap:20px;justify-content:space-between;padding:18px}
+.congress-list-copy{min-width:0}
+.congress-list-copy h3{color:#001e40;font-size:17px;font-weight:750;margin:0}
+.congress-list-copy p{color:#64748b;font-size:14px;margin:5px 0 9px}
+.congress-list-status{border-radius:999px;display:inline-block;font-size:12px;font-weight:700;padding:5px 10px}
+.congress-list-status.is-published{background:#e8f6ee;color:#17633a}
+.congress-list-status.is-draft{background:#fff4db;color:#805b00}
+.congress-list-actions{display:flex;flex:0 0 auto;flex-wrap:wrap;gap:8px}
+.congress-list-actions .btn-secondary{text-decoration:none}
+@media(max-width:900px){
+  .page-header>.admin-sidebar-toggle{display:inline-flex}
+}
+@media(max-width:680px){
+  .congress-admin-section{padding:19px}
+  .congress-admin-section-heading{align-items:flex-start;flex-direction:column}
+  .admin-edit-grid,.speaker-grid{grid-template-columns:minmax(0,1fr)}
+  .congress-admin-section .edit-field-wide,.speaker-grid .wide{grid-column:auto}
+  .fee-row{grid-template-columns:minmax(0,1fr) minmax(110px,.7fr)}
+  .fee-row .remove-button{grid-column:1/-1}
+  .speaker-card{padding:14px}
+  .sponsor-card{padding:14px}
+  .sponsor-grid{grid-template-columns:minmax(0,1fr)}
+  .sponsor-grid .wide{grid-column:auto}
+  .congress-country-admin-controls{grid-template-columns:minmax(0,1fr)}
+  .congress-country-admin-controls .btn-secondary{width:100%}
+  .speaker-card-header{align-items:flex-start}
+  .congress-admin-actions{align-items:stretch;flex-direction:column}
+  .congress-admin-actions .btn-primary,.congress-admin-actions .btn-secondary{width:100%}
+  .congress-list-page .admin-shell{padding:18px}
+  .congress-list-heading,.congress-list-item{align-items:stretch;flex-direction:column}
+  .congress-list-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .congress-list-actions .btn-secondary{text-align:center}
+}
+
+/* ==========================================================
+   Mejoras del administrador de congreso
+   ========================================================== */
+.congress-admin-content form { counter-reset: congress-section; }
+.congress-admin-section { scroll-margin-top: 78px; transition: box-shadow .2s ease, border-color .2s ease; }
+.congress-admin-section:focus-within { border-color: #cbd5e1; box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 14px 36px rgba(15,23,42,.09); }
+
+/* Número de sección junto al título */
+.congress-admin-section h2 { align-items: center; display: flex; gap: 12px; }
+.congress-admin-section h2::before {
+  align-items: center;
+  background: #001e40;
+  border-radius: 10px;
+  color: #ffd75e;
+  content: counter(congress-section);
+  counter-increment: congress-section;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 14px;
+  font-weight: 800;
+  height: 30px;
+  justify-content: center;
+  width: 30px;
+}
+.congress-admin-section-heading h2 { margin-bottom: 0; }
+.congress-admin-section-heading p { margin-left: 42px; }
+.congress-admin-intro { margin-left: 42px; }
+
+/* Barra de secciones */
+.congress-jump {
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(6px);
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(15,23,42,.06);
+  display: flex;
+  gap: 6px;
+  margin: 0 0 18px;
+  overflow-x: auto;
+  padding: 8px;
+  position: sticky;
+  scrollbar-width: none;
+  top: 8px;
+  z-index: 15;
+}
+.congress-jump::-webkit-scrollbar { display: none; }
+.congress-jump a {
+  border-radius: 9px;
+  color: #475569;
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 14px;
+  text-decoration: none;
+  transition: background .15s ease, color .15s ease;
+}
+.congress-jump a:hover,
+.congress-jump a:focus-visible { background: #f1f5f9; color: #001e40; }
+.congress-jump a.is-active { background: #001e40; color: #ffd75e; }
+
+/* Estados vacíos */
+#feesList:empty::before,
+#speakersList:empty::before,
+#sponsorsList:empty::before,
+#congressCountriesList:empty::before {
+  background: #f8fafc;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 12px;
+  color: #64748b;
+  display: block;
+  font-size: 14px;
+  padding: 22px;
+  text-align: center;
+  width: 100%;
+}
+#feesList:empty::before { content: "Aún no hay tarifas. Usa «Agregar tarifa» para crear la primera."; }
+#speakersList:empty::before { content: "Aún no hay ponentes. Usa «Agregar ponente» para registrar al primero."; }
+#sponsorsList:empty::before { content: "Aún no hay auspiciadores. Usa «Agregar auspiciador» para añadir el primero."; }
+#congressCountriesList:empty::before { content: "Aún no agregaste países adicionales."; }
+
+/* Tarjetas de ponentes y auspiciadores */
+.speaker-card,
+.sponsor-card { box-shadow: 0 1px 2px rgba(15,23,42,.04); transition: border-color .2s ease, box-shadow .2s ease; }
+.speaker-card:hover,
+.sponsor-card:hover { border-color: #b8c6d6; box-shadow: 0 10px 26px rgba(15,23,42,.08); }
+.speaker-card-header h3,
+.sponsor-card-header h3 { overflow-wrap: anywhere; }
+.speaker-card-header .remove-button,
+.sponsor-card-header .remove-button { color: #b42318; }
+.speaker-card-header .remove-button:hover,
+.sponsor-card-header .remove-button:hover { background: #fff0ee; border-color: #f2b8b0; }
+
+/* Barra de acciones fija abajo */
+.congress-admin-actions {
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(6px);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  bottom: 12px;
+  box-shadow: 0 -6px 24px rgba(15,23,42,.1);
+  margin-top: 8px;
+  padding: 14px 18px;
+  position: sticky;
+  z-index: 20;
+}
+.congress-dirty-state {
+  align-items: center;
+  color: #64748b;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 600;
+  gap: 8px;
+  margin-right: auto;
+}
+.congress-dirty-state::before { background: #94a3b8; border-radius: 50%; content: ""; height: 9px; width: 9px; }
+.congress-dirty-state.is-dirty { color: #b45309; }
+.congress-dirty-state.is-dirty::before { background: #f59e0b; box-shadow: 0 0 0 4px rgba(245,158,11,.22); }
+
+/* Foco visible en campos */
+.congress-admin-section .input-field:focus { border-color: #075078; box-shadow: 0 0 0 3px rgba(7,80,120,.15); outline: 0; }
+
+/* Modo oscuro del administrador */
+html.admin-dark .congress-admin-section,
+html.admin-dark .speaker-card,
+html.admin-dark .sponsor-card,
+html.admin-dark .congress-list-item { background: #1b2a31; border-color: #3b5058; box-shadow: none; }
+html.admin-dark .speaker-card,
+html.admin-dark .sponsor-card { background: #16232a; }
+html.admin-dark .congress-admin-section h2,
+html.admin-dark .speaker-card-header h3,
+html.admin-dark .sponsor-card-header h3,
+html.admin-dark .congress-list-copy h3 { color: #edf3f4; }
+html.admin-dark .congress-admin-section h2::before { background: var(--accent-fill); color: var(--on-accent); }
+html.admin-dark .congress-admin-intro,
+html.admin-dark .congress-admin-section-heading p,
+html.admin-dark .speaker-photo-hint,
+html.admin-dark .congress-list-copy p { color: #a7b7bc; }
+html.admin-dark .edit-label,
+html.admin-dark .fee-row label,
+html.admin-dark .speaker-grid label,
+html.admin-dark .sponsor-grid label { color: #d3dde0; }
+html.admin-dark .fee-row,
+html.admin-dark .speaker-card-header,
+html.admin-dark .sponsor-card-header { border-color: #3b5058; }
+html.admin-dark .congress-jump,
+html.admin-dark .congress-admin-actions { background: rgba(20,31,38,.95); border-color: #3b5058; }
+html.admin-dark .congress-jump a { color: #b7c6ca; }
+html.admin-dark .congress-jump a:hover,
+html.admin-dark .congress-jump a:focus-visible { background: #1b2a31; color: #edf3f4; }
+html.admin-dark .congress-jump a.is-active { background: var(--accent-fill); color: var(--on-accent); }
+html.admin-dark #feesList:empty::before,
+html.admin-dark #speakersList:empty::before,
+html.admin-dark #sponsorsList:empty::before,
+html.admin-dark #congressCountriesList:empty::before { background: #16232a; border-color: #3b5058; color: #a7b7bc; }
+html.admin-dark .congress-dirty-state { color: #a7b7bc; }
+html.admin-dark .congress-dirty-state.is-dirty { color: var(--accent); }
+html.admin-dark .congress-dirty-state.is-dirty::before { background: var(--accent-fill); }
+html.admin-dark .speaker-card-header .remove-button,
+html.admin-dark .sponsor-card-header .remove-button { color: #ffb4ab; }
+html.admin-dark .congress-admin-section .input-field:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(245,192,77,.22); }
+
+@media (max-width: 680px) {
+  .congress-admin-section-heading p,
+  .congress-admin-intro { margin-left: 0; }
+  .congress-jump { top: 4px; }
+  .congress-admin-actions { bottom: 6px; }
+  .congress-dirty-state { justify-content: center; margin-right: 0; }
+}

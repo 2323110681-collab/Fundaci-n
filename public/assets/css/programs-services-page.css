@@ -1,0 +1,723 @@
+/* Layout General */
+.programs-page-section {
+  padding-top: 24px;
+  padding-bottom: 56px;
+  background-color: #FAFAFA;
+}
+
+.programs-page-section.is-detail-view .filter-bar,
+.programs-page-section.is-detail-view .pagination {
+  display: none;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: #5A667F;
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: #062F4F;
+}
+
+.programs-header {
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #062F4F;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  color: #5A667F;
+  max-width: 780px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Barra de Filtros */
+.filter-bar {
+  background: linear-gradient(135deg, #F8F9FC 0%, #F5F7FB 100%);
+  border: 1px solid #E8EAF0;
+  border-radius: 14px;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.filter-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.filter-label {
+  font-size: 12px;
+  font-weight: 800;
+  color: #062F4F;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.filter-select {
+  background-color: #FFFFFF;
+  border: 1px solid #D8DCE8;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #062F4F;
+  min-width: 140px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* La lista desplegada necesita fondo y color propios: si no los tiene, el
+   navegador la pinta con los del <select> y las opciones salen en blanco. */
+.filter-select option {
+  background-color: #FFFFFF;
+  color: #062F4F;
+  font-weight: 500;
+}
+
+.filter-select option:checked {
+  background-color: #F5C542;
+  color: #062F4F;
+  font-weight: 700;
+}
+
+.filter-select:hover,
+.filter-select:focus {
+  border-color: #F5C542;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(245, 197, 66, 0.1);
+}
+
+.btn-clear-filters {
+  background: transparent;
+  border: none;
+  color: #6C7A93;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-clear-filters:hover {
+  color: #062F4F;
+}
+
+/* Grid de Programas */
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.program-card {
+  background: #FFFFFF;
+  border: 1px solid #E8EAF0;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.program-card-img {
+  position: relative;
+  height: 190px;
+}
+
+.program-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Etiquetas por Categoría */
+.card-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  background: #F5C542;
+  color: #062F4F;
+  box-shadow: 0 8px 18px rgba(245, 197, 66, 0.18);
+}
+
+.tag-salud,
+.tag-tecnologia,
+.tag-gestion,
+.tag-ingenieria,
+.tag-social,
+.tag-ciencia {
+  background: #F5C542;
+  color: #062F4F;
+}
+
+/* Detalle del programa */
+.program-detail-media {
+  position: relative;
+  width: 100%;
+  margin: 18px 0 24px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #E8EAF0;
+}
+
+.program-detail-media img {
+  display: block;
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+}
+
+.program-detail-media .card-tag {
+  z-index: 1;
+}
+
+.program-detail-body h1 {
+  margin: 0 0 14px;
+  color: #062F4F;
+  font-size: 28px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.program-detail-body .program-partner {
+  margin-bottom: 20px;
+  padding-top: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.program-content {
+  color: #46526B;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.program-content p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.program-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  margin: 24px 0 30px;
+  border: 1px solid #E8EAF0;
+  background: #E8EAF0;
+}
+
+.program-facts > div {
+  min-width: 0;
+  padding: 14px 16px;
+  background: #FFFFFF;
+}
+
+.program-facts dt {
+  margin-bottom: 5px;
+  color: #5A667F;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.program-facts dd {
+  margin: 0;
+  color: #062F4F;
+  font-size: 15px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.program-detail-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+  align-items: start;
+  gap: 32px;
+  margin-top: 28px;
+}
+
+.program-info-section {
+  margin-bottom: 30px;
+}
+
+.program-info-section h2,
+.program-enrollment h2 {
+  margin: 0 0 14px;
+  color: #062F4F;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.program-info-section > p,
+.program-modules p,
+.program-teacher p,
+.program-enrollment p {
+  color: #46526B;
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.program-info-section > p,
+.program-modules p,
+.program-teacher p,
+.program-enrollment p {
+  margin: 0;
+}
+
+.program-modules {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.program-modules li {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #E8EAF0;
+  border-radius: 8px;
+  background: #FFFFFF;
+}
+
+.module-number {
+  color: #B48600;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.program-modules h3,
+.program-teacher h3 {
+  margin: 0 0 5px;
+  color: #062F4F;
+  font-size: 16px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.program-teachers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.program-teacher {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid #E8EAF0;
+  border-radius: 8px;
+  background: #FFFFFF;
+}
+
+.program-teacher > img,
+.program-teacher-placeholder {
+  display: block;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #E8EAF0;
+  object-fit: cover;
+}
+
+.program-teacher .teacher-role {
+  margin-bottom: 6px;
+  color: #062F4F;
+  font-weight: 600;
+}
+
+.teacher-links,
+.program-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 10px;
+}
+
+.teacher-links a,
+.program-contact-links a {
+  color: #062F4F;
+  font-size: 14px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.program-enrollment {
+  padding: 20px;
+  border: 1px solid #E8EAF0;
+  border-top: 4px solid #F5C542;
+  border-radius: 8px;
+  background: #FFFFFF;
+}
+
+.program-enrollment p + p {
+  margin-top: 10px;
+}
+
+/* Cuerpo de la Tarjeta */
+.program-card-body {
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.program-card-body h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #062F4F;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.program-card-body h3 a {
+  color: #062F4F;
+}
+
+.program-card-body p {
+  font-size: 13px;
+  color: #5A667F;
+  line-height: 1.5;
+  margin: 0 0 20px;
+  flex: 1;
+}
+
+/* Convenio / Partner */
+.program-partner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #E8EAF0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #062F4F;
+}
+
+.check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background-color: #F5C542;
+  color: #062F4F;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-btn {
+  border: 1px solid #D8DCE8;
+  background: #FFFFFF;
+  color: #062F4F;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.page-btn.active {
+  background: #062F4F;
+  color: #FFFFFF;
+  border-color: #062F4F;
+}
+
+.dots {
+  color: #5A667F;
+  padding: 0 4px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .filter-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .program-detail-media {
+    margin-top: 12px;
+    border-radius: 10px;
+  }
+
+  .program-detail-media img {
+    max-height: 240px;
+  }
+
+  .program-detail-body h1 {
+    font-size: 22px;
+  }
+
+  .program-detail-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .program-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .program-info-section h2,
+  .program-enrollment h2 {
+    font-size: 19px;
+  }
+
+  .program-content {
+    font-size: 15px;
+  }
+
+  .program-teachers {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.program-content ul,.program-content ol{margin:0 0 1rem;padding-left:1.5rem}
+.program-content ul{list-style:disc}
+.program-content ol{list-style:decimal}
+.program-content li{margin-bottom:.25rem}
+.program-content h1,.program-content h2,.program-content h3,.program-content h4{margin:1rem 0 .5rem;color:#062F4F;line-height:1.3}
+.program-content h1{font-size:22px}
+.program-content h2{font-size:20px}
+.program-content h3{font-size:17px}
+.program-content h4{font-size:15px}
+.program-content a{color:inherit;text-decoration:underline}
+
+/* ============================================================
+   MODO OSCURO â€” html.high-contrast
+   Cubre el listado de programas y el detalle de programa.
+   ============================================================ */
+
+html.high-contrast .programs-page-section {
+  background-color: var(--dk-bg) !important;
+}
+
+html.high-contrast .page-title {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .section-subtitle {
+  color: var(--dk-text-2) !important;
+}
+
+html.high-contrast .breadcrumb {
+  color: var(--dk-text-3) !important;
+}
+
+html.high-contrast .breadcrumb a {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .filter-bar {
+  background: var(--dk-surface) !important;
+  border: 1px solid var(--dk-border) !important;
+  box-shadow: none;
+}
+
+html.high-contrast .filter-label {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .filter-select {
+  background-color: var(--dk-bg) !important;
+  border-color: var(--dk-border-strong) !important;
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .filter-select:hover,
+html.high-contrast .filter-select:focus {
+  background-color: var(--dk-surface-2) !important;
+  border-color: var(--dk-gold) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--dk-gold) 22%, transparent);
+}
+
+html.high-contrast .btn-clear-filters {
+  background: transparent !important;
+  color: var(--dk-text-2) !important;
+}
+
+html.high-contrast .btn-clear-filters:hover {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .program-card {
+  background: var(--dk-surface) !important;
+  border: 1px solid var(--dk-border) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+html.high-contrast .program-card:hover {
+  border-color: var(--dk-gold) !important;
+}
+
+html.high-contrast .program-card-body h3,
+html.high-contrast .program-card-body h3 a {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .program-card-body p {
+  color: var(--dk-text-2) !important;
+}
+
+html.high-contrast .program-partner {
+  border-top: 1px solid var(--dk-border) !important;
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .check-icon {
+  background: var(--dk-gold) !important;
+  color: #0F1722 !important;
+}
+
+/* ---------- Detalle de programa ---------- */
+
+html.high-contrast .program-detail-media {
+  background: var(--dk-surface-2) !important;
+  border: 1px solid var(--dk-border);
+}
+
+html.high-contrast .program-detail-body h1 {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .program-detail-body .program-partner {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .program-content,
+html.high-contrast .program-content p,
+html.high-contrast .program-content li {
+  color: var(--dk-text-2) !important;
+}
+
+html.high-contrast .program-content :is(h1, h2, h3, h4) {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .program-content a {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .program-facts {
+  border: 1px solid var(--dk-border) !important;
+  background: var(--dk-border) !important;
+}
+
+html.high-contrast .program-facts > div {
+  background: var(--dk-surface) !important;
+}
+
+html.high-contrast .program-facts dt {
+  color: var(--dk-text-3) !important;
+}
+
+html.high-contrast .program-facts dd {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .program-info-section h2,
+html.high-contrast .program-enrollment h2 {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .program-info-section > p,
+html.high-contrast .program-modules p,
+html.high-contrast .program-teacher p,
+html.high-contrast .program-enrollment p {
+  color: var(--dk-text-2) !important;
+}
+
+html.high-contrast .program-modules li,
+html.high-contrast .program-teacher,
+html.high-contrast .program-enrollment {
+  background: var(--dk-surface) !important;
+  border-color: var(--dk-border) !important;
+}
+
+html.high-contrast .program-enrollment {
+  border-top: 4px solid var(--dk-gold) !important;
+}
+
+html.high-contrast .module-number {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .program-modules h3,
+html.high-contrast .program-teacher h3,
+html.high-contrast .program-teacher .teacher-role {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .program-teacher-placeholder,
+html.high-contrast .program-teacher > img {
+  background: var(--dk-surface-3) !important;
+}
+
+html.high-contrast .teacher-links a,
+html.high-contrast .program-contact-links a {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .teacher-links a:hover,
+html.high-contrast .program-contact-links a:hover {
+  text-decoration: underline;
+}
+html.high-contrast .filter-select option {
+  background-color: var(--dk-surface-2) !important;
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .filter-select option:checked {
+  background-color: var(--dk-gold) !important;
+  color: #0F1722 !important;
+}

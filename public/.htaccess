@@ -1,0 +1,89 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:\d+)?$ [NC]
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Allow congress image uploads up to 5 MB without changing limits for other apps.
+<IfModule php_module>
+    php_value upload_max_filesize 6M
+    php_value post_max_size 8M
+</IfModule>
+
+# La raiz del sitio publica debe mostrar la portada, no la respuesta JSON del API
+DirectoryIndex home.php index.php
+
+# Compatibilidad para rutas antiguas de imágenes guardadas en la base de datos.
+RewriteRule ^fundaciondu/public/uploads/([A-Za-z0-9_.-]+)$ uploads/$1 [L,NC]
+
+# Los archivos estaticos existentes se sirven directamente. Si falta uno, se
+# muestra la pagina HTML de error en vez de responder con JSON de la API.
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(assets|uploads)/ - [L]
+RewriteRule ^(assets|uploads)/ error.php?code=404 [L,QSA]
+
+# Permitir que buscadores lean los archivos de descubrimiento SEO.
+RewriteRule ^(?:robots\.txt|sitemap\.xml)$ - [END,NC]
+
+# Los scripts PHP reales se ejecutan siempre como archivo, nunca se enrutan al
+# API. Asi el enrutado no depende de %{REQUEST_FILENAME} !-f, que en Windows
+# falla de forma intermitente y puede mandar una pagina real al controlador.
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule \.php$ - [L]
+
+# --- URLs limpias -------------------------------------------------------
+# El sitio se muestra sin la extension: /home en lugar de /home.php.
+# Las URLs antiguas con .php siguen funcionando, por si hay enlaces guardados.
+
+# La portada tiene como URL canonica la raiz del dominio.
+RewriteRule ^home/?$ / [R=301,L]
+
+# Paginas con alias mas corto que el nombre real del archivo.
+# La barra final opcional se acepta con una reescritura interna, no con una
+# redireccion: en Windows un R=301 con ruta relativa construye una URL con la
+# ruta del sistema de archivos (C:/xampp/...) en lugar de la ruta web.
+RewriteRule ^noticias/?$ noticias-page.php [L,QSA]
+RewriteRule ^programas/?$ programs-services-page.php [L,QSA]
+RewriteRule ^calendario/?$ calendario-page.php [L,QSA]
+
+# Cualquier pagina simple: se antepone .php al nombre pedido.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([a-z0-9-]+)/?$ $1.php [L,QSA]
+
+# La API se consulta por index.php; las rutas desconocidas de paginas se
+# muestran como un error HTML normal.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ error.php?code=404 [L,QSA]
+
+<IfModule mod_headers.c>
+    # No permitir que el navegador "adivine" el tipo de un archivo: evita que una
+    # imagen subida se interprete como HTML o JavaScript.
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Impide que el sitio se incruste en un iframe de otro dominio (clickjacking).
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # No filtrar la URL completa a terceros; solo el origen.
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Desactivar capacidades del navegador que el sitio no usa.
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+
+    # Politica de Seguridad de Contenido.
+    # 'unsafe-inline' aparece solo en style-src porque el editor Quill, el zoom de
+    # texto y los estilos generados en tiempo de ejecucion los necesitan. En
+    # script-src no se permite: por eso los onclick en linea se movieron a
+    # assets/js/site-controls.js.
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src https://www.google.com https://recaptcha.google.com/recaptcha/ https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+</IfModule>
+
+# La API nunca debe quedar cacheada por el navegador ni por un proxy intermedio.
+<FilesMatch "^index\.php$">
+    <IfModule mod_headers.c>
+        Header always set Cache-Control "no-store, no-cache, must-revalidate"
+    </IfModule>
+</FilesMatch>

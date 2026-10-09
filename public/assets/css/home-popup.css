@@ -1,0 +1,11 @@
+.site-popup[hidden]{display:none}
+.site-popup{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:24px;background:rgba(11,18,32,.72);animation:site-popup-fade-in .18s ease-out}
+.site-popup-dialog{position:relative;display:grid;justify-items:center;align-content:start;gap:12px;max-width:min(1100px,94vw);max-height:90vh;padding:16px;border:1px solid rgba(255,255,255,.72);border-radius:12px;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.38)}
+.site-popup-title{margin:0;color:#001e40;font-size:clamp(1.15rem,3vw,1.65rem);font-weight:800;line-height:1.2;text-align:center}
+.site-popup-image{display:block;max-width:100%;max-height:calc(90vh - 76px);width:auto;height:auto;object-fit:contain;border-radius:4px}
+.site-popup-link{display:block;line-height:0}
+.site-popup-close{position:absolute;top:-15px;right:-15px;z-index:1;display:grid;width:40px;height:40px;place-items:center;border:2px solid #fff;border-radius:50%;background:#102a43;color:#fff;font:700 26px/1 Arial,sans-serif;cursor:pointer;box-shadow:0 3px 12px rgba(0,0,0,.32)}
+.site-popup-close:hover,.site-popup-close:focus-visible{background:#001e40;outline:3px solid #fecf4f;outline-offset:2px}
+@keyframes site-popup-fade-in{from{opacity:0}to{opacity:1}}
+@media(max-width:600px){.site-popup{padding:18px}.site-popup-dialog{max-width:96vw;max-height:88vh;padding:10px}.site-popup-image{max-height:calc(88vh - 76px)}.site-popup-close{top:-12px;right:-10px;width:36px;height:36px}}
+@media(prefers-reduced-motion:reduce){.site-popup{animation:none}}

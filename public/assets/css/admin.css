@@ -1,0 +1,1072 @@
+:root{
+    --bg:#f6f9fb; --accent:#1fb4a6; --danger:#e74c3c; --ok:#27ae60; --muted:#777;
+    /* Paleta de marca tomada de home.css y contactos-page.css. */
+    --navy:#001E40; --navy-dark:#003366; --navy-light:#799DD6;
+    --gold:#765B00; --gold-light:#FECF4F; --on-accent:#172027;
+}
+*{box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{margin:0;background:var(--bg);color:#222}
+.page-header{background:var(--navy);border-bottom:3px solid var(--gold-light);box-shadow:0 8px 24px rgba(0,30,64,.12);color:#fff;padding:20px}
+
+/* Tailwind-style utility classes used by index.html */
+.bg-slate-50{background:#f8fafc}
+.text-slate-900{color:#0f172a}
+.text-slate-600{color:#475569}
+.text-slate-700{color:#334155}
+.bg-white{background:#ffffff}
+.rounded-3xl{border-radius:2rem}
+.shadow-sm{box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.border{border:1px solid #e5e7eb}
+.border-gray-200{border-color:#e5e7eb}
+.p-6{padding:1.5rem}
+.p-4{padding:1rem}
+.p-3{padding:.75rem}
+.mb-8{margin-bottom:2rem}
+.mb-4{margin-bottom:1rem}
+.mb-3{margin-bottom:.75rem}
+.text-xl{font-size:1.25rem;line-height:1.75rem}
+.text-2xl{font-size:1.5rem;line-height:2rem}
+.font-bold{font-weight:700}
+.font-semibold{font-weight:600}
+.text-sm{font-size:.875rem;line-height:1.25rem}
+.font-sans{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.mt-6{margin-top:1.5rem}
+.gap-6{gap:1.5rem}
+.space-y-4>*+*{margin-top:1rem}
+.space-y-10>*+*{margin-top:2.5rem}
+.flex{display:flex}
+.flex-col{flex-direction:column}
+.items-start{align-items:flex-start}
+.items-center{align-items:center}
+.justify-between{justify-content:space-between}
+.gap-4{gap:1rem}
+.gap-3{gap:.75rem}
+.gap-2{gap:.5rem}
+.grid{display:grid}
+.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.w-full{width:100%}
+.mx-auto{margin-left:auto;margin-right:auto}
+.max-w-6xl{max-width:72rem}
+.space-y-10>*+*{margin-top:2.5rem}
+
+@media (min-width: 768px){
+  .md\:flex-row, [class~="md:flex-row"]{flex-direction:row}
+  .md\:items-center, [class~="md:items-center"]{align-items:center}
+  .md\:p-12, [class~="md:p-12"]{padding:3rem}
+}
+@media (min-width: 1024px){
+  .lg\:grid-cols-2, [class~="lg:grid-cols-2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* Utility resets */
+.hidden{display:none !important}
+.input-field{width:100%;border:1px solid #d1d5db;border-radius:.75rem;padding:.9rem 1rem;background:#fff;color:#0f172a;outline:none;transition:border-color .2s ease}
+.input-field:focus{border-color:#f59e0b;box-shadow:0 0 0 4px rgba(245,158,11,.12)}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;width:100%;border-radius:.75rem;font-weight:600;padding:.95rem 1rem;border:none;cursor:pointer;background:#f59e0b;color:#0f172a}
+.tab-button{border-radius:9999px;border:1px solid transparent;padding:.8rem 1.2rem;background:#fff;color:#0f172a;font-weight:600;transition:all .2s ease;cursor:pointer}
+.tab-button.active{background:#f59e0b;color:#0f172a;border-color:#f59e0b}
+.tab-button:hover{border-color:#cbd5e1}
+/* Menu lateral del panel. En pantallas anchas es un riel fijo a la izquierda y el
+   cuerpo reserva el espacio con padding. En moviles el riel sale fuera de
+   pantalla y se abre con el boton hamburguesa, sobre un fondo oscurecido que
+   lo cierra al pulsar fuera o con la tecla Escape. */
+.admin-workspace{position:relative;min-width:0}
+.admin-content-congreso{grid-template-columns:minmax(0,1fr)}
+
+/* El encabezado y el contenido ya no comparten contenedor: el header es hermano
+   de la tarjeta, asi que su separacion vertical la define su margen inferior. */
+
+.admin-topbar{display:none;align-items:center;gap:12px;margin-bottom:16px}
+.admin-topbar-title{font-size:1.1rem;font-weight:700;color:var(--navy);margin:0}
+
+.admin-sidebar{
+  background:var(--navy);
+  border:1px solid var(--navy-dark);
+  border-radius:16px;
+  color:#ffffff;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  padding:18px 12px;
+}
+
+.admin-sidebar-title{
+  align-items:center;
+  color:#fff;
+  display:flex;
+  font-size:.72rem;
+  font-weight:700;
+  gap:10px;
+  letter-spacing:.12em;
+  padding:0;
+  text-transform:uppercase;
+}
+
+.admin-sidebar-logo{flex:0 0 auto;height:36px;object-fit:contain;width:36px}
+
+.admin-sidebar-nav{display:flex;flex-direction:column;gap:4px}
+
+/* Los enlaces del riel van sin marco: solo texto. El fondo aparece al pasar el
+   raton y en la seccion activa, que es lo que distingue donde estas. */
+.admin-sidebar .tab-button{
+  background:transparent;
+  border:0;
+  border-radius:10px;
+  color:#ffffff;
+  display:block;
+  font-size:15px;
+  font-weight:600;
+  padding:11px 14px;
+  text-align:left;
+  width:100%;
+}
+
+.admin-sidebar .tab-button:hover{background:var(--navy-dark);color:#ffffff}
+.admin-sidebar .tab-button.active{background:var(--gold-light);border-color:var(--gold-light);color:var(--navy)}
+.admin-sidebar .tab-button:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px}
+.admin-sidebar .tab-button[hidden]{display:none}
+
+.admin-sidebar-user{
+  align-items:center;
+  border-top:1px solid rgba(255,255,255,.14);
+  display:flex;
+  gap:10px;
+  margin-top:auto;
+  padding:14px 0 2px;
+}
+
+.admin-sidebar-avatar{
+  align-items:center;
+  background:var(--gold-light);
+  border-radius:999px;
+  color:var(--on-accent);
+  display:inline-flex;
+  flex:0 0 auto;
+  font-size:12px;
+  font-weight:700;
+  height:32px;
+  justify-content:center;
+  overflow:hidden;
+  width:32px;
+}
+
+.admin-sidebar-avatar img{height:100%;object-fit:cover;width:100%}
+.admin-sidebar-user-copy{display:flex;flex-direction:column;min-width:0}
+.admin-sidebar-user-copy strong{color:#fff;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.admin-sidebar-user-copy small{color:var(--gold-light);font-size:10px;letter-spacing:.04em;text-transform:uppercase}
+
+.admin-sidebar-logout{
+  background:transparent;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;
+  color:#e2e8f0;
+  cursor:pointer;
+  flex:0 0 auto;
+  font-size:12px;
+  font-weight:600;
+  margin-left:auto;
+  padding:7px 12px;
+}
+
+.admin-sidebar-logout:hover{background:rgba(254,207,79,.12);border-color:var(--gold-light);color:var(--gold-light)}
+
+/* Boton hamburguesa: solo se ve cuando el riel se convierte en cajon. */
+.admin-sidebar-toggle{
+  align-items:center;
+  background:var(--navy);
+  border:1px solid var(--gold-light);
+  border-radius:10px;
+  color:#ffffff;
+  cursor:pointer;
+  display:inline-flex;
+  font-size:14px;
+  font-weight:600;
+  gap:8px;
+  padding:9px 14px;
+}
+.page-header > .admin-sidebar-toggle{display:none}
+
+.admin-sidebar-toggle-label{line-height:1}
+
+.admin-sidebar-toggle-bars,.admin-sidebar-toggle-bars::before,.admin-sidebar-toggle-bars::after{
+  background:currentColor;
+  border-radius:2px;
+  display:block;
+  height:2px;
+  position:relative;
+  width:18px;
+}
+
+.admin-sidebar-toggle-bars::before,.admin-sidebar-toggle-bars::after{content:'';position:absolute}
+.admin-sidebar-toggle-bars::before{top:-6px}
+.admin-sidebar-toggle-bars::after{top:6px}
+
+.admin-sidebar-backdrop{background:rgba(6,17,30,.6);border:0;inset:0;position:fixed;z-index:50}
+.admin-sidebar-backdrop[hidden]{display:none}
+
+body.admin-sidebar-open{overflow:hidden}
+
+/* Una sola columna: el formulario va encima y los resultados debajo. Ambos
+   ocupan todo el ancho para que sus bordes izquierdo y derecho coincidan; antes
+   el formulario se limitaba a 900px y quedaba pegado a la izquierda, con el
+   panel de resultados mas ancho y sin alinear. */
+.admin-content{grid-template-columns:minmax(0,1fr);min-width:0}
+.admin-form-panel{width:100%}
+.page-header h1{margin:0;font-size:20px}
+.page-header .sub{margin:4px 0 0;font-size:13px;opacity:.95}
+
+/* El encabezado usa la misma marca que el resto del panel: fondo teal, logo
+   sobre una pastilla blanca y textos en blanco. */
+/* El encabezado y la barra del boton viven fuera de la tarjeta, como hijos
+   directos del contenedor. El espacio vertical lo controlan sus propios
+   margenes, asi que se anula el space-y-10 del contenedor para que no sume
+   40px entre el boton, el encabezado y la tarjeta. */
+.max-w-6xl > .admin-topbar,
+.max-w-6xl > .page-header{margin-top:0}
+
+.page-header-brand{align-items:center;display:flex;gap:12px}
+.container{padding:20px}
+
+@media (min-width: 901px) {
+  /* El riel ocupa toda la altura de la ventana y el encabezado arranca justo en
+     su borde derecho, sin separador: el padding izquierdo del cuerpo es
+     exactamente el ancho del riel. El padding superior es 0 para que ambos
+     queden pegados al borde superior. */
+  body.admin-page {
+    padding: 0 24px 24px 188px;
+  }
+
+  body.admin-page > .max-w-6xl {
+    margin: 0;
+    max-width: none;
+  }
+
+  .page-header {
+    border-radius: 0 0 16px 16px;
+    margin-bottom: 24px;
+  }
+
+  /* Riel fijo pegado al borde izquierdo y a toda la altura de la ventana. El
+     cuerpo reserva el ancho con el padding lateral de arriba. */
+  .admin-sidebar {
+    border-radius: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    position: fixed;
+    top: 0;
+    width: 188px;
+    z-index: 40;
+  }
+
+  .admin-sidebar .tab-button {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  /* Con 188px de ancho el avatar, el nombre y el boton Salir en una sola fila
+     dejan al nombre unos 50px y se corta a mitad. Salir pasa a su propia fila y
+     el nombre recupera todo el ancho del riel. */
+  .admin-sidebar-user {
+    flex-wrap: wrap;
+  }
+
+  .admin-sidebar-logout {
+    flex: 1 1 100%;
+    justify-content: center;
+    margin: 10px 0 0;
+    padding: 9px 12px;
+  }
+}
+
+html, body {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #eef2ff 0%, #f9fbff 25%, #ffffff 60%, #f4f7ff 100%);
+  color: #111827;
+}
+
+.results-panel {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 32px 80px rgba(15, 23, 42, 0.08);
+}
+
+.results-panel h2 {
+  margin-top: 0;
+}
+
+.controls{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+select,input{padding:10px 12px;border:1px solid #d1d5db;border-radius:0.85rem;background:#fff;color:#0f172a;outline:none;transition:border-color .2s ease, box-shadow .2s ease}
+select:focus,input:focus{border-color:#f59e0b;box-shadow:0 0 0 4px rgba(245,158,11,.12)}
+button{padding:10px 14px;border:0;border-radius:0.95rem;background:#0b75a8;color:#fff;cursor:pointer}
+table{width:100%;min-width:100%;border-collapse:separate;background:transparent;border:none;table-layout:fixed}
+thead th{background:rgba(248,248,255,.95);padding:16px 18px;text-align:left;border-bottom:1px solid rgba(226,232,240,.85);font-size:12px;color:#0f172a;text-transform:uppercase;letter-spacing:.08em}
+/* Con table-layout:fixed una palabra larga (un correo o un enlace sin
+   espacios) puede desbordar la celda y ensanchar la tabla. overflow-wrap:anywhere
+   si parte dentro de la palabra; break-word no siempre lo hace. */
+tbody td{padding:16px 18px;border-bottom:1px solid rgba(226,232,240,.85);word-wrap:break-word;overflow-wrap:anywhere;font-size:14px;color:#334155;vertical-align:middle}
+tbody tr{background:#ffffff;}
+tbody tr:nth-child(even){background:#f9fbff}
+tbody tr:hover{background:#eef3ff}
+.actions-btn{display:inline-flex;align-items:center;justify-content:center;min-width:70px;padding:.65rem .95rem;border-radius:.85rem;color:#fff;margin-right:.5rem;cursor:pointer;font-size:12px;font-weight:700;border:none;transition:transform .16s ease,box-shadow .16s ease,opacity .16s ease}
+.actions-btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(15,23,42,.12);opacity:.95}
+.btn-delete{background:#ef4444}
+.btn-delete:hover{background:#dc2626}
+.btn-edit{background:#2563eb}
+.btn-edit:hover{background:#1d4ed8}
+.btn-view{background:#16a34a}
+.btn-tag{background:#f59e0b;color:#111}
+
+/* compact table look similar to image */
+table#dataTable thead th{font-weight:700;font-size:12px;padding:12px 14px}
+table#dataTable tbody td{font-size:14px;padding:12px 14px}
+table#dataTable tbody tr:nth-child(even){background:#f9fbff}
+table#dataTable{min-width:900px;table-layout:fixed}
+table#dataTable thead th{position:sticky;top:0;z-index:2}
+
+table#dataTable thead th:first-child,
+table#dataTable tbody td:first-child{border-top-left-radius:1rem;border-bottom-left-radius:1rem}
+
+table#dataTable thead th:last-child,
+table#dataTable tbody td:last-child{border-top-right-radius:1rem;border-bottom-right-radius:1rem}
+
+.results-panel .table-wrap{max-height:520px;overflow:auto;padding-right:2px;border:none;border-radius:1.75rem;background:rgba(255,255,255,.95);box-shadow:0 20px 48px rgba(15,23,42,.08)}
+.results-panel .table-wrap table{border:none}
+.results-panel .table-wrap::-webkit-scrollbar{width:10px}
+.results-panel .table-wrap::-webkit-scrollbar-thumb{background:rgba(148,163,184,.65);border-radius:999px}
+.results-panel .table-wrap::-webkit-scrollbar-track{background:#edf2ff}
+
+
+/* Modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(15,23,42,0.45);padding:18px;z-index:50;}
+.modal[aria-hidden="false"]{display:flex}
+.modal-content{background:#f8fafc;padding:24px;border-radius:1.75rem;max-width:min(820px,94vw);width:100%;max-height:calc(100vh - 48px);overflow-y:auto;position:relative;border:1px solid #e5e7eb;box-shadow:0 32px 80px rgba(15,23,42,.08);}
+.modal-content.small-modal{max-width:min(520px,94vw);padding:22px}
+.modal-content h2{margin-top:0;margin-bottom:1rem;font-size:1.4rem;color:#0f172a;font-weight:700}
+.close{position:absolute;right:16px;top:16px;background:#ffffff;border:1px solid #e5e7eb;width:36px;height:36px;border-radius:9999px;cursor:pointer;color:#0f172a;font-size:20px;display:grid;place-items:center;transition:all .2s ease}
+.close:hover{background:#f1f5f9;transform:scale(1.05)}
+#formFields{display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));gap:18px}
+#formFields label{display:flex;flex-direction:column;font-size:0.95rem;color:#334155;gap:0.5rem}
+#formFields input,#formFields textarea,#formFields .input-field{padding:1rem 1.1rem;border:1px solid #d1d5db;border-radius:1rem;background:#ffffff;transition:border-color .2s ease,box-shadow .2s ease;outline:none}
+#formFields textarea{min-height:120px;resize:vertical}
+#formFields input:focus,#formFields textarea:focus,#formFields .input-field:focus{border-color:#f59e0b;box-shadow:0 0 0 4px rgba(245,158,11,.12)}
+.actions{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.actions .btn-primary{max-width:200px}
+.actions .btn-secondary{max-width:200px;background:#64748b;color:#fff}
+.actions .btn-secondary:hover{background:#4b5563}
+.modal-content.small-modal #formFields{grid-template-columns:1fr;}
+.modal-content.small-modal #formFields .modal-field{margin-bottom:10px}
+.modal-content.small-modal #formFields label{font-size:0.95rem}
+.modal-content.small-modal #formFields input, .modal-content.small-modal #formFields textarea, .modal-content.small-modal #formFields .input-field{padding:1rem 1.1rem;border-radius:1rem;border:1px solid #d1d5db;width:100%}
+.modal-content.small-modal .actions{justify-content:center}
+.modal-content.small-modal .actions button{min-width:120px}
+.results-panel .table-wrap{max-height:none;overflow:auto;padding-right:2px}
+
+/* Modal small layout adjustments */
+.modal-content.small-modal #formFields{grid-template-columns:1fr;}
+.modal-content.small-modal #formFields .modal-field{margin-bottom:10px}
+.modal-content.small-modal #formFields label{font-size:14px}
+.modal-content.small-modal #formFields input, .modal-content.small-modal #formFields textarea, .modal-content.small-modal #formFields .input-field{padding:10px;border-radius:6px;border:1px solid #e6e6e6;width:100%}
+.modal-content.small-modal .actions{justify-content:center}
+.modal-content.small-modal .actions button{min-width:110px}
+
+.modal-content.small-modal h2{margin-top:0;margin-bottom:10px;font-size:18px}
+.modal-content.small-modal .close{right:8px;top:8px}
+.results-panel .table-wrap{max-height:520px;overflow:auto}
+
+.program-json-editor{width:100%;min-width:0}
+.program-json-list{display:grid;gap:12px;margin:10px 0}
+.program-json-item{min-width:0;margin:0;padding:14px;border:1px solid #d1d5db;border-radius:8px;background:#f8fafc}
+.program-json-item legend{padding:0 6px;color:#0f172a;font-size:13px;font-weight:700}
+.program-json-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.program-json-field{display:grid;min-width:0;gap:6px;color:#334155;font-size:13px}
+.program-json-field input,.program-json-field textarea{box-sizing:border-box;width:100%;min-width:0;padding:10px;border:1px solid #d1d5db;border-radius:6px;background:#fff;color:#0f172a;font:inherit}
+.program-json-field textarea{min-height:82px;resize:vertical}
+.program-json-add,.program-json-remove{width:auto;padding:9px 12px;border:0;border-radius:6px;font-size:13px;font-weight:700;cursor:pointer}
+.program-json-add{background:#f5c542;color:#062f4f}
+.program-json-remove{margin-top:10px;background:#9f2d27;color:#fff}
+.modal-json-field{grid-column:1/-1}
+
+html.admin-dark .program-json-item{border-color:#3b5058;background:#1b2a31}
+html.admin-dark .program-json-item legend,html.admin-dark .program-json-field{color:#e5edef}
+html.admin-dark .program-json-field input,html.admin-dark .program-json-field textarea{border-color:#3b5058;background:#111c22;color:#edf3f4}
+
+@media (max-width:640px){.program-json-fields{grid-template-columns:minmax(0,1fr)}}
+
+/* Por debajo de 900px el riel fijo deja de caber y se convierte en cajon: se
+   muestra el boton hamburguesa, el aside sale fuera de pantalla y aparece un
+   fondo oscurecido para cerrarlo. El markup del aside no cambia, solo su
+   posicionamiento. */
+@media (max-width: 900px) {
+  #formFields{grid-template-columns:1fr}
+  .modal-content{padding:20px;}
+
+  .admin-topbar{display:flex}
+
+  .admin-sidebar{
+    border-radius:0 16px 16px 0;
+    bottom:0;
+    box-shadow:0 18px 40px rgba(6,17,30,.35);
+    left:0;
+    max-width:82vw;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    padding:18px 14px;
+    position:fixed;
+    top:0;
+    transform:translateX(-100%);
+    transition:transform .22s ease;
+    width:280px;
+    z-index:60;
+  }
+
+  body.admin-sidebar-open .admin-sidebar{transform:translateX(0)}
+  body.admin-sidebar-open .admin-sidebar-backdrop{display:block}
+
+  /* En el riel estrecho los botones ocupan la fila completa. */
+  .admin-sidebar .tab-button{font-size:15px;padding:12px 14px;white-space:normal}
+}
+
+/* Con el riel fijo el fondo oscurecido no tiene sentido: siempre permanece
+   oculto, aunque el JavaScript lo haya marcado como visible por error. */
+@media (min-width: 901px) {
+  .admin-sidebar-backdrop,
+  body.admin-sidebar-open .admin-sidebar-backdrop{display:none !important}
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+  /* Riel fijo mas estrecho: los textos de las pestanas ya no caben en dos
+     columnas, asi que se fuerza el flujo vertical de una sola. */
+  body.admin-page {
+    padding: 0 18px 18px 172px;
+  }
+
+  body.admin-page > .max-w-6xl {
+    margin: 0;
+    max-width: none;
+  }
+
+  .admin-topbar {
+    display: none;
+  }
+
+  .admin-sidebar {
+    border-radius: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    padding: 16px 10px;
+    position: fixed;
+    top: 0;
+    transform: none;
+    width: 172px;
+    z-index: 40;
+  }
+
+  .admin-sidebar .tab-button {
+    font-size: 14px;
+    line-height: 1.3;
+    padding: 10px;
+    width: 100%;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .admin-sidebar-title {
+    font-size: .68rem;
+  }
+
+  /* Mismo motivo que en el riel de escritorio: a 172px el nombre necesita la
+     fila completa, asi que Salir baja a una fila propia. */
+  .admin-sidebar-user {
+    flex-wrap: wrap;
+  }
+
+  .admin-sidebar-logout {
+    flex: 1 1 100%;
+    justify-content: center;
+    margin: 10px 0 0;
+  }
+
+  .admin-sidebar-backdrop,
+  body.admin-sidebar-open .admin-sidebar-backdrop {
+    display: none !important;
+  }
+
+  .admin-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .modal{padding:12px;}
+  .modal-content{max-width:100vw;min-width:0;height:auto;margin:0;}
+  .modal-content h2{font-size:1.25rem;}
+  .close{right:12px;top:12px;width:34px;height:34px;}
+  .actions{gap:10px;}
+  body.admin-page{padding:14px;}
+
+  /* Con el riel tan estrecho el boton de salida necesita su propia fila para
+     que el nombre del usuario no lo deje ilegible. */
+  .admin-sidebar-user{flex-wrap:wrap}
+  .admin-sidebar-logout{flex:1 1 100%;justify-content:center;margin:6px 0 0;padding:9px 12px}
+}
+
+
+.admin-theme-toggle {
+  align-items: center;
+  background: #102f45;
+  border: 1px solid #244c63;
+  border-radius: 999px;
+  color: #f8fafc;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 600;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 16px;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+.admin-theme-toggle:hover {
+  background: #19445d;
+  border-color: #4b7285;
+  transform: translateY(-1px);
+}
+
+html.admin-dark {
+  color-scheme: dark;
+  /* Unico cambio que se conserva respecto al tema oscuro original: el amarillo
+     de marca aparecia en siete valores distintos (#f59e0b, #efbd39, #e7b638,
+     #f2d27d, #f5c04d, #d9a20b, #b45309) y al cambiar de tema el color
+     principal se deformaba. Se unifican en un solo acento, con la misma
+     luminosidad perceptual para que se lean como el mismo color.
+     El resto de superficies y bordes conserva los valores que ya tenia. */
+  --accent: #f5c04d;        /* texto, bordes, iconos, enlaces */
+  --accent-fill: #efbd39;    /* rellenos sólidos; siempre con --on-accent */
+  --on-accent: #172027;
+}
+
+html.admin-dark body {
+  background:
+    radial-gradient(ellipse at 8% 0%, rgba(57, 107, 107, .18), transparent 36%),
+    linear-gradient(145deg, #121b20 0%, #0d151b 58%, #131d21 100%);
+  color: #e8eef0;
+}
+
+html.admin-dark .max-w-6xl > section {
+  background: rgba(20, 31, 38, .96) !important;
+  border-color: #2b3b42 !important;
+  box-shadow: 0 28px 72px rgba(0, 0, 0, .3);
+}
+
+html.admin-dark .admin-content > .bg-slate-50,
+html.admin-dark .admin-content > .bg-white,
+html.admin-dark .results-panel,
+html.admin-dark .results-panel .table-wrap {
+  background: #19262d !important;
+  border-color: #30434a !important;
+  color: #e8eef0 !important;
+}
+
+html.admin-dark .admin-content h2,
+html.admin-dark .text-slate-900 {
+  color: #f3f6f7 !important;
+}
+
+html.admin-dark .text-slate-600,
+html.admin-dark .text-slate-700 {
+  color: #aebdc2 !important;
+}
+
+/* Estos elementos usaban el amarillo #f59e0b del tema claro sin alternativa
+   oscura, asi que en modo oscuro el boton principal conservaba un tono mas
+   apagado y mas saturado que el resto de acentos. */
+html.admin-dark .btn-primary,
+html.admin-dark .btn-tag {
+  background: var(--accent-fill);
+  color: var(--on-accent);
+}
+
+html.admin-dark .admin-check input[type="checkbox"],
+html.admin-dark .edit-checkbox {
+  accent-color: var(--accent-fill);
+}
+
+html.admin-dark .input-field,
+html.admin-dark input,
+html.admin-dark select,
+html.admin-dark textarea {
+  background: #111c22;
+  border-color: #3b5058;
+  color: #edf3f4;
+}
+
+html.admin-dark .input-field::placeholder,
+html.admin-dark input::placeholder,
+html.admin-dark textarea::placeholder {
+  color: #91a3a9;
+}
+
+html.admin-dark .input-field:focus,
+html.admin-dark input:focus,
+html.admin-dark select:focus,
+html.admin-dark textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(245, 192, 77, .22);
+}
+
+html.admin-dark .admin-theme-toggle {
+  background: #26373d;
+  border-color: #53666b;
+  color: var(--accent);
+}
+
+html.admin-dark thead th {
+  background: #223139;
+  border-color: #35484f;
+  color: #e5edef;
+}
+
+html.admin-dark table#dataTable {
+  background: #19262d;
+  color: #edf3f4;
+}
+
+html.admin-dark table#dataTable thead th {
+  background: #223139;
+  border-color: #35484f;
+  color: #edf3f4;
+}
+
+html.admin-dark tbody tr,
+html.admin-dark tbody tr:nth-child(even) {
+  background: #19262d;
+}
+
+html.admin-dark table#dataTable tbody tr:nth-child(even) {
+  background: #223139;
+}
+
+html.admin-dark tbody tr:hover {
+  background: #263840;
+}
+
+html.admin-dark table#dataTable tbody tr:hover {
+  background: #2d424b;
+}
+
+html.admin-dark tbody td {
+  border-color: #304148;
+  color: #d1dcdf;
+}
+
+html.admin-dark table#dataTable tbody td {
+  border-color: #304148;
+  color: #edf3f4;
+}
+
+html.admin-dark .modal-content {
+  background: #19262d;
+  border-color: #35474d;
+  color: #e8eef0;
+}
+
+html.admin-dark .modal-content h2,
+html.admin-dark #formFields label {
+  color: #edf3f4;
+}
+
+html.admin-dark .close {
+  background: #26373d;
+  border-color: #53666b;
+  color: #f3f6f7;
+}
+
+html.admin-dark .swal2-popup {
+  border: 1px solid #34484f;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, .45);
+}
+
+@media (max-width: 640px) {
+  .admin-theme-toggle {
+    min-height: 38px;
+    padding: 0 12px;
+  }
+}
+
+
+/* ===== Pantalla de edición (reemplaza al modal) ===== */
+.admin-edit-screen[hidden]{display:none}
+.admin-edit-screen{background:#fff;border:1px solid #e5e7eb;border-radius:1.75rem;box-shadow:0 20px 48px rgba(15,23,42,.08);min-width:0;padding:28px}
+/* Al entrar en edicion se oculta el panel de alta y el listado. Antes se
+   marcaba .admin-workspace, que ya no existe: ahora la clase va en el body. */
+body.admin-is-editing .admin-content{display:none}
+.admin-edit-header{align-items:flex-start;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;margin-bottom:24px}
+.admin-edit-header h2{color:#0f172a;font-size:1.6rem;font-weight:700;margin:6px 0 2px}
+.admin-edit-subtitle{color:#64748b;font-size:.9rem;margin:0}
+.admin-edit-back{background:transparent;border:none;color:#b45309;cursor:pointer;font-size:.9rem;font-weight:600;padding:0}
+.admin-edit-back:hover{text-decoration:underline}
+.admin-edit-actions,.admin-edit-footer{align-items:center;display:flex;gap:12px}
+.admin-edit-actions .btn-primary,.admin-edit-footer .btn-primary{width:auto;min-width:160px}
+.admin-edit-actions .btn-secondary,.admin-edit-footer .btn-secondary{background:#fff;border:1px solid #cbd5e1;border-radius:.75rem;color:#0f172a;cursor:pointer;font-weight:600;padding:.95rem 1.4rem}
+.admin-edit-actions .btn-secondary:hover,.admin-edit-footer .btn-secondary:hover{background:#f1f5f9}
+.admin-edit-actions .btn-primary:disabled,.admin-edit-footer .btn-primary:disabled{cursor:wait;opacity:.7}
+.admin-edit-footer{border-top:1px solid #e5e7eb;justify-content:flex-end;margin-top:28px;padding-top:20px}
+.admin-edit-grid{display:grid;gap:18px 24px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.edit-group-title{border-bottom:1px solid #e5e7eb;color:#0b2948;font-size:1.05rem;font-weight:700;grid-column:1/-1;margin:12px 0 0;padding-bottom:8px}
+.edit-group-title:first-child{margin-top:0}
+.edit-field{min-width:0}
+.edit-field-wide{grid-column:1/-1}
+.edit-label{color:#334155;display:block;font-size:.9rem;font-weight:600;margin-bottom:6px}
+.edit-image-preview{border-radius:.75rem;display:block;margin-bottom:6px;max-height:160px;max-width:100%}
+.edit-hint{color:#64748b;font-size:.8rem;margin:0 0 8px}
+.edit-field textarea.input-field{min-height:96px;resize:vertical}
+@media (max-width: 800px){
+  .admin-edit-screen{padding:18px}
+  .admin-edit-grid{grid-template-columns:1fr}
+  .admin-edit-actions{display:none}
+  .admin-edit-footer{flex-direction:column-reverse;align-items:stretch}
+  .admin-edit-footer .btn-primary{width:100%}
+}
+
+/* ===== Editor enriquecido (Quill) =====
+   Quill fija height:100% en .ql-container y en .ql-editor, y ademas carga DESPUES
+   de esta hoja (admin.php: style.css, admin.css, quill.snow.css), asi que su regla
+   gana cualquier valor de altura puesto aqui con la misma especificidad. Dentro de
+   #formCreate, que es un grid de dos columnas, ese 100% hacia que el editor se
+   calculara contra la fila y los campos de abajo (Duracion, Modalidad...) quedaran
+   debajo de su caja sin verse. Por eso se imponen height:auto con una
+   especificidad mayor, y la altura pasa a depender del contenido: el editor crece
+   con lo escrito hasta un tope y a partir de ahi se desplaza dentro. El min-height
+   explicito evita que el editor quede en blanco al dejar de usar el 100%. */
+.ql-toolbar.ql-snow{background:#f8fafc;border:1px solid #d1d5db;border-radius:.75rem .75rem 0 0}
+.ql-container.ql-snow,.quill-editor.ql-container{background:#fff;border:1px solid #d1d5db;border-radius:0 0 .75rem .75rem;border-top:0;font-family:inherit;font-size:1rem;height:auto}
+.ql-container.ql-snow .ql-editor{color:#0f172a;height:auto;max-height:60vh;min-height:180px;overflow-y:auto}
+.admin-edit-screen .ql-container.ql-snow .ql-editor{height:auto;max-height:70vh;min-height:260px}
+.ql-container.ql-snow .ql-editor.ql-blank::before{font-style:italic}
+
+/* El contenedor del editor no debe recortar al editor ni quedarse sin ancho: si
+   no, la barra y los campos siguientes se pisan. */
+#formCreate > div:has(.quill-editor),
+#formFields > div:has(.quill-editor){min-width:0;overflow:visible}
+html.admin-dark .admin-edit-screen{background:#17232d;border-color:#2c3f48;color:#e8eef0}
+html.admin-dark .admin-edit-header h2,html.admin-dark .edit-label{color:#e8eef0}
+html.admin-dark .edit-group-title{border-color:#2c3f48;color:var(--accent)}
+html.admin-dark .admin-edit-subtitle,html.admin-dark .edit-hint{color:#a9bcc3}
+html.admin-dark .admin-edit-back{color:var(--accent)}
+html.admin-dark .admin-edit-footer{border-color:#2c3f48}
+html.admin-dark .admin-edit-actions .btn-secondary,html.admin-dark .admin-edit-footer .btn-secondary{background:#1b2a31;border-color:#3b5058;color:#e8eef0}
+html.admin-dark .ql-toolbar.ql-snow{background:#1b2a31;border-color:#3b5058}
+html.admin-dark .ql-container.ql-snow{background:#111c22;border-color:#3b5058}
+html.admin-dark .ql-container.ql-snow .ql-editor{color:#edf3f4}
+html.admin-dark .ql-container.ql-snow .ql-editor.ql-blank::before{color:#8aa0a8}
+html.admin-dark .ql-snow .ql-stroke{stroke:#cbd5e1}
+html.admin-dark .ql-snow .ql-fill{fill:#cbd5e1}
+html.admin-dark .ql-snow .ql-picker{color:#cbd5e1}
+html.admin-dark .ql-snow .ql-picker-options{background:#1b2a31;border-color:#3b5058}
+/* Quill pinta de azul #06c el boton o desplegable que esta activo o bajo el
+   puntero. Ese azul no pertenece a la paleta del panel, asi que se sustituye
+   por el acento. */
+html.admin-dark .ql-snow .ql-toolbar button:hover,
+html.admin-dark .ql-snow .ql-toolbar button:focus,
+html.admin-dark .ql-snow .ql-toolbar button.ql-active,
+html.admin-dark .ql-snow .ql-toolbar .ql-picker-label:hover,
+html.admin-dark .ql-snow .ql-toolbar .ql-picker-label.ql-active,
+html.admin-dark .ql-snow .ql-toolbar .ql-picker-item:hover,
+html.admin-dark .ql-snow .ql-toolbar .ql-picker-item.ql-selected{color:var(--accent)}
+html.admin-dark .ql-snow .ql-toolbar button:hover .ql-stroke,
+html.admin-dark .ql-snow .ql-toolbar button:focus .ql-stroke,
+html.admin-dark .ql-snow .ql-toolbar button.ql-active .ql-stroke,
+html.admin-dark .ql-snow .ql-toolbar button:hover .ql-stroke-miter,
+html.admin-dark .ql-snow .ql-toolbar button.ql-active .ql-stroke-miter,
+html.admin-dark .ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke{stroke:var(--accent)}
+html.admin-dark .ql-snow .ql-toolbar button:hover .ql-fill,
+html.admin-dark .ql-snow .ql-toolbar button.ql-active .ql-fill,
+html.admin-dark .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill{fill:var(--accent)}
+/* En pantallas tactiles Quill fuerza el gris #444 al pasar el puntero, que
+   sobre la barra oscura casi no se ve. */
+@media (pointer:coarse){
+  html.admin-dark .ql-snow.ql-toolbar button:hover:not(.ql-active){color:#cbd5e1}
+  html.admin-dark .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-stroke,
+  html.admin-dark .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-stroke-miter{stroke:#cbd5e1}
+  html.admin-dark .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-fill,
+  html.admin-dark .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-stroke.ql-fill{fill:#cbd5e1}
+}
+html.admin-dark .ql-snow .ql-editor a{color:#7cc4e8}
+html.admin-dark .ql-snow .ql-editor blockquote{border-left-color:#4d626b;color:#a9bcc3}
+html.admin-dark .ql-snow .ql-editor code{background:#1b2a31;color:#e8eef0}
+html.admin-dark .ql-snow .ql-editor li[data-list] > .ql-ui{color:#8aa0a8}
+/* El globo para insertar un enlace llega blanco desde el CDN. */
+html.admin-dark .ql-snow .ql-tooltip{background:#223139;border-color:#3b5058;color:#edf3f4;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+html.admin-dark .ql-snow .ql-tooltip input[type=text]{background:#111c22;border-color:#3b5058;color:#edf3f4}
+html.admin-dark .ql-snow .ql-tooltip a.ql-action::after{border-right-color:#3b5058}
+html.admin-dark .ql-snow .ql-picker.ql-expanded .ql-picker-label{color:#8aa0a8}
+html.admin-dark .ql-snow .ql-picker.ql-expanded .ql-picker-label .ql-fill{fill:#8aa0a8}
+html.admin-dark .ql-snow .ql-picker.ql-expanded .ql-picker-label .ql-stroke{stroke:#8aa0a8}
+html.admin-dark .ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label,
+html.admin-dark .ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options{border-color:#3b5058}
+html.admin-dark .ql-toolbar.ql-snow .ql-color-picker .ql-picker-item.ql-selected,
+html.admin-dark .ql-toolbar.ql-snow .ql-color-picker .ql-picker-item:hover{border-color:#edf3f4}
+/* Casillas, tabla ordenable con paginación y avisos del panel */
+.admin-check{align-items:flex-start;color:#334155;cursor:pointer;display:flex;font-size:.9rem;gap:.6rem;line-height:1.4}
+.admin-check input[type="checkbox"],.edit-checkbox{accent-color:#f59e0b;cursor:pointer;flex:0 0 auto;height:1.15rem;margin:.1rem 0 0;padding:0;width:1.15rem}
+html.admin-dark .admin-check{color:#e8eef0}
+.admin-edit-viewlink{color:#0b75a8;display:inline-block;font-size:.85rem;font-weight:600;margin-top:4px;text-decoration:none}
+.admin-edit-viewlink:hover{text-decoration:underline}
+.admin-edit-viewlink[hidden]{display:none}
+html.admin-dark .admin-edit-viewlink{color:#7cc4e8}
+a.actions-btn{text-decoration:none}
+.actions-cell{white-space:normal}
+.actions-cell .actions-btn{margin-bottom:.4rem}
+thead th .th-sort{background:none;border:0;border-radius:0;color:inherit;cursor:pointer;font:inherit;letter-spacing:inherit;padding:0;text-align:left;text-transform:inherit}
+thead th .th-sort:hover{text-decoration:underline}
+thead th .th-sort span{font-size:.75em;opacity:.65}
+td.table-empty{color:#64748b;padding:28px 14px;text-align:center}
+td.table-error{color:#b91c1c}
+html.admin-dark td.table-empty{color:#a9bcc3}
+html.admin-dark td.table-error{color:#fca5a5}
+.table-pager{align-items:center;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-top:14px}
+.table-pager-info{color:#64748b;font-size:.85rem}
+.table-pager-nav{align-items:center;display:flex;flex-wrap:wrap;gap:6px}
+.pager-btn{background:#fff;border:1px solid #cbd5e1;border-radius:.65rem;color:#0f172a;font-size:.85rem;font-weight:600;min-width:2.2rem;padding:.45rem .7rem}
+.pager-btn:hover:not(:disabled){background:#f1f5f9}
+.pager-btn.active{background:#f59e0b;border-color:#f59e0b;color:#0f172a}
+.pager-btn:disabled{cursor:not-allowed;opacity:.5}
+.table-pager-gap{color:#64748b;padding:0 2px}
+html.admin-dark .table-pager-info,html.admin-dark .table-pager-gap{color:#a9bcc3}
+html.admin-dark .pager-btn{background:#1b2a31;border-color:#3b5058;color:#e8eef0}
+html.admin-dark .pager-btn:hover:not(:disabled){background:#263840}
+html.admin-dark .pager-btn.active{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-accent)}
+
+/* Quien tiene el movimiento reducido activado en el sistema no debe ver los
+   desplazamientos: se anulan el levantamiento de los botones de accion y el
+   deslizamiento del menu lateral. Los cambios de color se conservan porque no
+   son movimiento. */
+@media (prefers-reduced-motion: reduce) {
+  .actions-btn,
+  .pager-btn,
+  .admin-sidebar-logout,
+  .admin-sidebar-toggle,
+  .tab-button,
+  .btn-primary,
+  .btn-secondary{transition:none}
+
+  .actions-btn:hover{transform:none;box-shadow:none}
+
+  .admin-sidebar{transition:none}
+}
+/* =====================================================================
+   Renovación visual del panel (v3)
+   Se agrega al final para sobrescribir sin tocar la lógica del JS.
+   Paleta: azul marino + dorado de la marca.
+   ===================================================================== */
+:root{--ink:#0f1f33;--line:#e2e8f0;--soft:#f8fafc;--radius:16px;--ring:0 0 0 3px rgba(254,207,79,.55)}
+
+body.admin-page,body.admin-page *{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+body.admin-page{background:#f1f5f9;color:var(--ink);-webkit-font-smoothing:antialiased}
+
+/* El contenedor exterior deja de ser una tarjeta: ahora cada bloque es su propia tarjeta. */
+.max-w-6xl > section.admin-shell{
+  background:transparent;border:0;border-radius:0;box-shadow:none;padding:0;
+  margin-top:0;max-width:1200px;
+}
+
+/* ---- Encabezado ---- */
+.page-header{
+  align-items:center;display:flex;gap:24px;justify-content:space-between;
+  min-height:96px;padding:18px 28px;margin-bottom:24px;
+}
+.page-header-brand{min-width:0}
+.page-header-eyebrow{
+  color:var(--gold-light);font-size:10px;font-weight:700;line-height:1.2;
+  margin:0 0 4px;text-transform:uppercase;
+}
+.page-header h1{font-size:24px;font-weight:800;line-height:1.2;letter-spacing:0}
+.page-header .sub{font-size:13px;line-height:1.45;margin-top:4px;opacity:.82}
+.page-header-link{
+  align-items:center;border:1px solid rgba(255,255,255,.3);border-radius:10px;
+  color:#fff;display:inline-flex;flex:0 0 auto;font-size:13px;font-weight:700;
+  gap:9px;padding:10px 14px;text-decoration:none;transition:background .15s ease,border-color .15s ease;
+}
+.page-header-link svg{fill:none;height:17px;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.8;width:17px}
+.page-header-link:hover{background:rgba(255,255,255,.1);border-color:var(--gold-light)}
+.page-header-link:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px}
+
+/* ---- Menú lateral ---- */
+.admin-sidebar{background:var(--navy);border:0}
+.admin-sidebar-title{font-size:.78rem;padding:2px 6px 6px}
+.admin-sidebar-logo{height:40px;width:40px}
+.admin-sidebar-nav{gap:6px}
+.admin-sidebar .tab-button{
+  align-items:center;display:flex;gap:12px;text-decoration:none;
+  color:rgba(255,255,255,.82);font-size:14.5px;font-weight:600;
+  padding:11px 14px;border-radius:12px;
+  transition:background .15s ease,color .15s ease;
+}
+.admin-sidebar .tab-button .nav-ico{
+  fill:none;flex:0 0 20px;height:20px;width:20px;
+  stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
+}
+.admin-sidebar .tab-button:hover{background:rgba(255,255,255,.09);color:#fff}
+.admin-sidebar .tab-button.active{background:var(--gold-light);color:var(--navy);box-shadow:0 6px 16px rgba(254,207,79,.22)}
+.admin-sidebar-user{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:10px}
+.admin-sidebar-logout{border-radius:10px}
+
+@media (min-width:901px){
+  body.admin-page{padding:0 0 32px 228px}
+  .admin-sidebar{width:228px;padding:22px 14px}
+  .max-w-6xl > section.admin-shell{margin-left:28px}
+  .admin-sidebar .tab-button{font-size:14.5px;padding:11px 14px}
+  .page-header{border-radius:0;margin-bottom:24px}
+}
+@media (min-width:641px) and (max-width:900px){
+  body.admin-page{padding-right:0}
+  .page-header{border-radius:0}
+}
+@media (max-width:900px){
+  .page-header{padding:18px 20px}
+}
+@media (max-width:640px){
+  .page-header{
+    border-radius:0;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    margin-left:-24px;
+    margin-right:-24px;
+  }
+  .page-header > .admin-sidebar-toggle{display:inline-flex;grid-column:1;grid-row:1}
+  .page-header-brand{grid-column:1/-1;grid-row:2}
+  .page-header-link{grid-column:2;grid-row:1}
+}
+@media (max-width:560px){
+  .page-header{align-items:center;gap:16px;padding:18px 20px}
+  .page-header h1{font-size:21px}
+  .page-header .sub{max-width:38ch}
+  .page-header-link{font-size:0;gap:0;padding:10px}
+  .page-header-link svg{height:18px;width:18px}
+}
+
+/* ---- Tarjetas: formulario y resultados ---- */
+.admin-content{gap:24px}
+.admin-content > .admin-form-panel,
+.admin-content > .results-panel{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:0 1px 2px rgba(15,23,42,.04),0 10px 30px rgba(15,23,42,.05);
+  padding:28px;
+}
+.admin-form-panel #resourceTitle{color:var(--navy);font-size:1.4rem;font-weight:800;letter-spacing:-.01em;margin:0 0 4px}
+.admin-form-panel #resourceDescription{color:#64748b;font-size:14px;line-height:1.5;margin:0}
+.results-panel h2{color:var(--navy);font-size:1.2rem;font-weight:800;margin:0 0 16px}
+
+/* ---- Formulario de alta en dos columnas ---- */
+#formCreate{
+  align-items:start;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px;
+  margin-top:22px;padding-top:22px;border-top:1px solid var(--line);
+}
+#formCreate > *{margin:0}
+#formCreate > div:has(textarea),
+#formCreate > div:has(.quill-editor),
+#formCreate > div:has(.program-json-editor),
+#formCreate > div:has(input[type="file"]),
+#formCreate > div:has(.admin-check),
+#formCreate > div:has(input[name="titulo"]),
+#formCreate > div:has(input[name="link"]),
+#formCreate > div:has(input[name="link_inscripcion"]),
+#formCreate > div:has(input[name="ubicacion_google"]){grid-column:1/-1}
+#formCreate label:not(.admin-check){display:block;margin:0 0 6px;font-size:13px;font-weight:600;color:#334155}
+#formCreate .admin-check{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+#createSubmitBtn{grid-column:1/-1;justify-self:start;width:auto;min-width:200px;margin-top:4px}
+@media (max-width:760px){
+  #formCreate{grid-template-columns:1fr}
+  .admin-content > .admin-form-panel,.admin-content > .results-panel{padding:20px}
+}
+
+/* ---- Campos ---- */
+.input-field{
+  background:#fff;border:1px solid #cbd5e1;border-radius:10px;color:var(--ink);
+  font-size:14.5px;min-height:44px;padding:11px 14px;
+  transition:border-color .15s ease,box-shadow .15s ease;
+}
+.input-field::placeholder{color:#94a3b8}
+.input-field:hover{border-color:#94a3b8}
+.input-field:focus{border-color:var(--navy-dark);box-shadow:var(--ring)}
+textarea.input-field{min-height:96px;resize:vertical;line-height:1.5}
+#formFields .input-field{border-radius:10px;padding:11px 14px}
+input[type="file"].input-field{background:var(--soft);border-style:dashed;cursor:pointer;padding:8px}
+input[type="file"].input-field::file-selector-button{
+  background:#e6edf7;border:0;border-radius:8px;color:var(--navy-dark);cursor:pointer;
+  font-weight:700;margin-right:12px;padding:8px 14px;
+}
+input[type="file"].input-field::file-selector-button:hover{background:#d5e1f2}
+.congress-admin-logo-preview{background:#f8fafc;border:1px solid var(--line);border-radius:10px;max-height:180px;max-width:min(100%,280px);object-fit:contain;padding:8px}
+.congress-admin-logo-preview[hidden]{display:none}
+
+/* ---- Botones ---- */
+.btn-primary{
+  background:var(--navy-dark);border-radius:10px;color:#fff;font-weight:700;
+  padding:.8rem 1.4rem;transition:background .15s ease,box-shadow .15s ease;
+}
+.btn-primary:hover{background:var(--navy)}
+.btn-primary:focus-visible{box-shadow:var(--ring);outline:none}
+.admin-edit-actions .btn-secondary,.admin-edit-footer .btn-secondary{border-radius:10px;padding:.8rem 1.4rem}
+
+/* ---- Barra de búsqueda del listado ---- */
+.admin-toolbar{align-items:center;display:flex;flex-wrap:wrap;gap:12px}
+.admin-toolbar label{color:#64748b;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.admin-toolbar .input-field{width:auto}
+.admin-toolbar #searchInput{flex:1 1 220px}
+.admin-toolbar #refreshBtn{
+  background:#fff;border:1px solid #cbd5e1;color:var(--navy-dark);padding:.7rem 1.1rem;width:auto;
+}
+.admin-toolbar #refreshBtn:hover{background:#f1f5f9}
+
+/* ---- Tabla ---- */
+.results-panel .table-wrap{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:none}
+table#dataTable{border-collapse:collapse;min-width:760px;table-layout:auto}
+table#dataTable thead th{
+  background:var(--soft);border-bottom:1px solid var(--line);color:#475569;
+  font-size:11.5px;font-weight:800;letter-spacing:.07em;padding:13px 16px;
+}
+table#dataTable tbody td{border-bottom:1px solid #eef2f6;color:#1e293b;font-size:14px;padding:14px 16px}
+table#dataTable tbody tr,
+table#dataTable tbody tr:nth-child(even){background:#fff}
+table#dataTable tbody tr:hover{background:#f8fafc}
+table#dataTable tbody tr:last-child td{border-bottom:0}
+table#dataTable thead th:first-child,table#dataTable tbody td:first-child,
+table#dataTable thead th:last-child,table#dataTable tbody td:last-child{border-radius:0}
+table#dataTable td img{border:1px solid var(--line);border-radius:10px !important}
+thead th .th-sort:hover{color:var(--navy-dark);text-decoration:none}
+
+.actions-btn{
+  border:1px solid transparent;border-radius:8px;font-size:12px;font-weight:700;
+  margin:0 6px 4px 0;min-width:0;padding:.42rem .8rem;
+}
+.actions-btn:hover{box-shadow:none;opacity:1;transform:none}
+.btn-edit{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}
+.btn-edit:hover{background:#1d4ed8;color:#fff}
+.btn-delete{background:#fef2f2;border-color:#fecaca;color:#b91c1c}
+.btn-delete:hover{background:#dc2626;color:#fff}
+.btn-view{background:#f0fdf4;border-color:#bbf7d0;color:#15803d}
+.btn-view:hover{background:#15803d;color:#fff}
+
+.pager-btn{border-radius:8px}
+.pager-btn.active{background:var(--navy-dark);border-color:var(--navy-dark);color:#fff}
+
+/* ---- Editor enriquecido y listas de módulos/docentes ---- */
+.ql-toolbar.ql-snow{background:var(--soft);border-color:#cbd5e1;border-radius:10px 10px 0 0}
+.ql-container.ql-snow,.quill-editor.ql-container{border-color:#cbd5e1;border-radius:0 0 10px 10px}
+.program-json-item{background:var(--soft);border-color:var(--line);border-radius:12px}
+.program-json-add{background:var(--gold-light);border-radius:8px;color:var(--navy)}
+.program-json-remove{background:#fee2e2;border-radius:8px;color:#991b1b}
+
+/* ---- Pantalla de edición ---- */
+.admin-edit-screen{border-color:var(--line);border-radius:var(--radius);box-shadow:0 1px 2px rgba(15,23,42,.04),0 10px 30px rgba(15,23,42,.05);padding:28px 32px}
+.admin-edit-header h2{color:var(--navy);font-weight:800}
+.admin-edit-back{color:var(--navy-dark)}
+.edit-group-title{border-bottom:2px solid var(--gold-light);color:var(--navy)}

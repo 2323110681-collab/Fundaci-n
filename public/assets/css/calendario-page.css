@@ -1,0 +1,891 @@
+/* Layout y Títulos de la página de Calendario */
+.calendar-page-section {
+  padding-top: 24px;
+  background-color: #FAFAFA;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: var(--body-text);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--navy);
+}
+
+.calendar-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* Selector de vista (Mensual / Lista) */
+.view-toggle {
+  display: inline-flex;
+  background: #E8EAF0;
+  padding: 6px;
+  border-radius: 12px;
+  border: none;
+  gap: 6px;
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #5A667F;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.toggle-btn.active {
+  background: linear-gradient(135deg, #F5C542 0%, #F5C542 100%);
+  color: #062F4F;
+  box-shadow: 0 4px 12px rgba(245, 197, 66, 0.3);
+  font-weight: 700;
+}
+
+.toggle-btn:hover:not(.active) {
+  color: #062F4F;
+}
+
+.page-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #062F4F;
+  margin: 0 0 12px;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  color: #5A667F;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Barra de Filtros */
+.filter-bar {
+  background: linear-gradient(135deg, #F8F9FC 0%, #F5F7FB 100%);
+  border: 1px solid #E8EAF0;
+  border-radius: 14px;
+  padding: 14px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.filter-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.filter-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: #062F4F;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.filter-select {
+  background-color: #FFFFFF;
+  border: 1px solid #D8DCE8;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #5A667F;
+  min-width: 140px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 500;
+}
+
+/* Sin fondo propio, el navegador pinta la lista desplegada heredando el del
+   <select> y las opciones salian del mismo color que la caja. Con fondo y color
+   explicitos la lista se dibuja siempre sobre blanco. */
+.filter-select option {
+  background-color: #FFFFFF;
+  color: #062F4F;
+  font-weight: 500;
+}
+
+.filter-select option:checked {
+  background-color: #F5C542;
+  color: #062F4F;
+  font-weight: 700;
+}
+
+/* El :hover ya no cambia el fondo: ese crema se colaba en la lista abierta y
+   por eso los tipos y lugares salian amarillos. */
+.filter-select:hover {
+  border-color: #F5C542;
+  background-color: #FFFFFF;
+}
+
+.filter-select:focus {
+  border-color: #F5C542;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(245, 197, 66, 0.1);
+}
+
+.btn-clear-filters {
+  background: transparent;
+  border: none;
+  color: #6C7A93;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-clear-filters:hover {
+  color: #F5C542;
+}
+
+/* Estructura Calendario vs Detalle */
+.calendar-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 340px;
+  gap: 28px;
+  align-items: start;
+}
+
+.calendar-main {
+  display: grid;
+  gap: 28px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Widget Calendario */
+.calendar-widget {
+  background: var(--white);
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.calendar-widget:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+
+.calendar-month-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px;
+  /* El azul de la barra del mes es solido a proposito: no usar degradados aqui. */
+  background: #062F4F;
+  border-bottom: none;
+}
+
+.calendar-month-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.month-nav {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  font-size: 20px;
+  color: #FFFFFF;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.month-nav:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Grid del Mes */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  background: #FFFFFF;
+  padding: 4px;
+  gap: 4px;
+}
+
+.day-name {
+  padding: 14px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #062F4F;
+  border-bottom: none;
+  background: #F0F3F7;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.day-cell {
+  min-height: 100px;
+  border-right: none;
+  border-bottom: none;
+  padding: 10px;
+  font-size: 14px;
+  color: var(--text);
+  text-align: center;
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  border: 1px solid #E8EAF0;
+}
+
+.day-cell:hover {
+  background-color: #F8F9FC;
+  border-color: #D0D6E8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(6, 47, 79, 0.08);
+}
+
+.calendar-grid > .day-cell:nth-of-type(7n) {
+  border-right: none;
+}
+
+.day-cell.prev-month {
+  color: #C8CDD9;
+  background-color: #FAFBFC;
+}
+
+.day-cell.today {
+  box-shadow: inset 0 0 0 2px var(--gold);
+  background: #FFFBF0;
+}
+
+/* El dia seleccionado ya no se rellena de dorado: como la celda se abre por
+   defecto en el proximo evento, el bloque amarillo dominaba la pantalla. Se
+   usa el azul institucional para que la seleccion siga siendo evidente. */
+.day-cell.selected-day {
+  background: #062F4F;
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 2px #062F4F, 0 6px 16px rgba(6, 47, 79, 0.28);
+}
+
+.day-cell.selected-day .event-dot {
+  background-color: #FFFFFF;
+}
+
+.day-cell.selected-day .event-count {
+  color: #FFFFFF;
+}
+
+.date-number {
+  display: block;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.event-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #F5C542;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+}
+
+.event-count {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #F5C542;
+  color: #062F4F;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(245, 197, 66, 0.4);
+}
+
+.event-list-panel {
+  background: var(--white);
+  border: none;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.list-panel-header {
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid #F5C542;
+}
+
+.list-panel-header h2 {
+  font-size: 20px;
+  margin: 0 0 8px;
+  color: #062F4F;
+  font-weight: 700;
+}
+
+.list-panel-info {
+  margin: 0;
+  font-size: 13px;
+  color: #6C7A93;
+}
+
+.event-list {
+  display: grid;
+  gap: 12px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.event-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.event-list::-webkit-scrollbar-track {
+  background: #F5F5F5;
+  border-radius: 10px;
+}
+
+.event-list::-webkit-scrollbar-thumb {
+  background: #D0D0D0;
+  border-radius: 10px;
+}
+
+.event-list::-webkit-scrollbar-thumb:hover {
+  background: #B0B0B0;
+}
+
+.event-list-item {
+  width: 100%;
+  text-align: left;
+  padding: 16px 14px;
+  border: 2px solid #E8EAF0;
+  border-radius: 14px;
+  background: #FFFFFF;
+  color: var(--navy);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.event-list-item:hover {
+  border-color: #F5C542;
+  background: #FFFBF0;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(245, 197, 66, 0.2);
+}
+
+.event-list-item.active {
+  border-color: #F5C542;
+  background: linear-gradient(135deg, #FFFBF0 0%, #FFF8E5 100%);
+  box-shadow: 0 6px 16px rgba(245, 197, 66, 0.3);
+}
+
+.event-list-item-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.event-list-item-header strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #062F4F;
+}
+
+.event-list-item-header strong a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.event-list-item-header strong a:hover {
+  text-decoration: underline;
+}
+
+.event-list-item-header .event-category {
+  font-size: 11px;
+  color: #062F4F;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: #F5C542;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.event-list-item p {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: #5A667F;
+  line-height: 1.4;
+}
+
+.event-list-item small {
+  color: #6C7A93;
+  font-size: 11px;
+}
+
+/* Detalle del Evento (Lateral) */
+.event-detail-card {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFFBF0 100%);
+  border: none;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.event-detail-card .card-tag {
+  position: static;
+  display: inline-block;
+  margin-bottom: 16px;
+  background: #F5C542;
+  color: #062F4F;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(245, 197, 66, 0.3);
+}
+
+/* Modo oscuro de este bloque en la seccion "MODO OSCURO" del final. */
+
+.event-detail-card h2 {
+  font-size: 22px;
+  color: #062F4F;
+  line-height: 1.3;
+  margin: 0 0 24px;
+  font-weight: 700;
+}
+
+/* El titulo de la tarjeta abre la ficha del evento: mantiene el tamano del
+   encabezado y solo anade el subrayado como senal de que se puede pulsar. */
+.event-detail-card h2 .event-detail-link {
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-decoration-color: #F5C542;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.event-detail-card h2 .event-detail-link:hover {
+  color: #0B4A78;
+  text-decoration-color: #062F4F;
+}
+
+.event-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #E8EAF0;
+  margin-bottom: 20px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.meta-item svg {
+  color: #F5C542;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.meta-item strong {
+  display: block;
+  color: #6C7A93;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.meta-item p {
+  margin: 0;
+  color: #062F4F;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.event-description h3 {
+  font-size: 11px;
+  color: #6C7A93;
+  letter-spacing: 0.05em;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.event-description p {
+  font-size: 13px;
+  color: #5A667F;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.btn-navy-full {
+  display: block;
+  width: 100%;
+  background: #062F4F;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 16px rgba(6, 47, 79, 0.2);
+}
+
+.btn-navy-full:hover {
+  background: #0A3A5C;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(6, 47, 79, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .calendar-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .calendar-header-row,
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .filter-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .day-cell {
+    min-height: 50px;
+  }
+}
+
+/* ============================================================
+   MODO OSCURO â€” html.high-contrast
+   Paleta: fondo #0F1722 / #172233, dorado #FECF4F, texto
+   principal casi blanco, secundario gris claro y dia
+   seleccionado en azul.
+   ============================================================ */
+
+html.high-contrast .calendar-page-section {
+  background-color: var(--dk-bg) !important;
+}
+
+/* ---------- Selector de vista: "Vista mensual" / "Vista de lista" ---------- */
+
+html.high-contrast .view-toggle {
+  background: var(--dk-surface-2) !important;
+  border: 1px solid var(--dk-border) !important;
+}
+
+html.high-contrast .toggle-btn {
+  background: transparent !important;
+  color: var(--dk-text-2) !important;
+}
+
+html.high-contrast .toggle-btn:hover:not(.active) {
+  background: var(--dk-surface-3) !important;
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .toggle-btn.active {
+  background: var(--dk-gold) !important;
+  color: #0F1722 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Barra de filtros ---------- */
+
+html.high-contrast .filter-bar {
+  background: var(--dk-surface) !important;
+  border: 1px solid var(--dk-border) !important;
+  box-shadow: none;
+}
+
+html.high-contrast .filter-label {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .filter-select {
+  background-color: var(--dk-bg) !important;
+  border-color: var(--dk-border-strong) !important;
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .filter-select:hover,
+html.high-contrast .filter-select:focus {
+  background-color: var(--dk-surface-2) !important;
+  border-color: var(--dk-gold) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--dk-gold) 22%, transparent);
+}
+
+html.high-contrast .btn-clear-filters {
+  background: transparent !important;
+  color: var(--dk-text-2) !important;
+}
+
+html.high-contrast .btn-clear-filters:hover {
+  color: var(--dk-gold) !important;
+}
+
+/* ---------- Rejilla del mes ---------- */
+
+html.high-contrast .calendar-month-header {
+  background: #0A0F1A !important;
+  border-bottom: 1px solid var(--dk-border);
+}
+
+html.high-contrast .calendar-month-header h2 {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .month-nav {
+  background: rgba(254, 207, 79, 0.14) !important;
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .month-nav:hover {
+  background: var(--dk-gold) !important;
+  color: #0F1722 !important;
+}
+
+html.high-contrast .calendar-grid {
+  background: var(--dk-bg) !important;
+  gap: 4px;
+}
+
+html.high-contrast .day-name {
+  background: var(--dk-surface-2) !important;
+  color: var(--dk-text-2) !important;
+  border-bottom: 1px solid var(--dk-border);
+}
+
+html.high-contrast .day-cell {
+  background: var(--dk-surface) !important;
+  border: 1px solid var(--dk-border) !important;
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .day-cell:hover {
+  background-color: var(--dk-surface-2) !important;
+  border-color: var(--dk-border-strong) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+html.high-contrast .day-cell.prev-month {
+  background: #121A28 !important;
+  color: var(--dk-text-3) !important;
+}
+
+html.high-contrast .day-cell.today {
+  background: var(--dk-surface-2) !important;
+  box-shadow: inset 0 0 0 2px var(--dk-gold);
+}
+
+html.high-contrast .day-cell.today .date-number {
+  color: var(--dk-gold) !important;
+}
+
+/* Dia seleccionado: azul, no dorado (pedido explicito). */
+html.high-contrast .day-cell.selected-day {
+  background: var(--dk-blue) !important;
+  border-color: var(--dk-blue) !important;
+  color: #FFFFFF !important;
+  box-shadow: inset 0 0 0 2px var(--dk-blue), 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+html.high-contrast .day-cell.selected-day :is(.date-number, span, strong) {
+  color: #FFFFFF !important;
+}
+
+html.high-contrast .day-cell.selected-day .event-dot {
+  background-color: #FFFFFF !important;
+}
+
+html.high-contrast .day-cell.selected-day .event-count {
+  background: #FFFFFF !important;
+  color: var(--dk-blue-2) !important;
+}
+
+html.high-contrast .event-dot {
+  background-color: var(--dk-gold) !important;
+}
+
+html.high-contrast .event-count {
+  background: var(--dk-gold) !important;
+  color: #0F1722 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Panel de lista de eventos ---------- */
+
+html.high-contrast .event-list-panel {
+  background: var(--dk-surface) !important;
+  border: 1px solid var(--dk-border) !important;
+  box-shadow: none;
+}
+
+html.high-contrast .list-panel-header {
+  border-bottom: 2px solid var(--dk-gold) !important;
+}
+
+html.high-contrast .list-panel-header h2 {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .list-panel-info {
+  color: var(--dk-text-3) !important;
+}
+
+html.high-contrast .event-list-item {
+  background: var(--dk-surface-2) !important;
+  border: 2px solid var(--dk-border) !important;
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .event-list-item:hover {
+  background: var(--dk-surface-3) !important;
+  border-color: var(--dk-gold) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+html.high-contrast .event-list-item.active {
+  background: var(--dk-blue) !important;
+  border-color: var(--dk-blue) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+html.high-contrast .event-list-item.active :is(strong, a, p, small, .event-category) {
+  color: #FFFFFF !important;
+}
+
+html.high-contrast .event-list-item-header .event-category {
+  background: var(--dk-gold) !important;
+  color: #0F1722 !important;
+}
+
+html.high-contrast .event-list-item-header strong,
+html.high-contrast .event-list-item-header strong a {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .event-list-item p {
+  color: var(--dk-text-2) !important;
+}
+
+html.high-contrast .event-list-item small {
+  color: var(--dk-text-3) !important;
+}
+
+/* ---------- Tarjeta lateral de detalle del evento ---------- */
+
+html.high-contrast .event-detail-card {
+  background: var(--dk-surface) !important;
+  border: 1px solid var(--dk-border) !important;
+  box-shadow: none;
+}
+
+html.high-contrast .event-detail-card .card-tag {
+  background: var(--dk-gold) !important;
+  color: #0F1722 !important;
+}
+
+html.high-contrast .event-detail-card h2 {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .event-detail-card h2 .event-detail-link {
+  color: var(--dk-text) !important;
+  text-decoration-color: var(--dk-gold);
+}
+
+html.high-contrast .event-meta-list {
+  border-bottom: 2px solid var(--dk-border) !important;
+}
+
+html.high-contrast .meta-item svg {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .meta-item strong {
+  color: var(--dk-text-3) !important;
+}
+
+html.high-contrast .meta-item p {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .event-description h3 {
+  color: var(--dk-text-3) !important;
+}
+
+html.high-contrast .event-description p {
+  color: var(--dk-text-2) !important;
+}
+
+html.high-contrast .btn-navy-full {
+  background: var(--dk-gold) !important;
+  color: #0F1722 !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+html.high-contrast .btn-navy-full:hover {
+  background: var(--dk-gold-soft) !important;
+  color: #0F1722 !important;
+}
+html.high-contrast .filter-select option {
+  background-color: var(--dk-surface-2) !important;
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .filter-select option:checked {
+  background-color: var(--dk-gold) !important;
+  color: #0F1722 !important;
+}

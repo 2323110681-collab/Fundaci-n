@@ -1,0 +1,104 @@
+/* Shared pagination component */
+.pagination,
+.paginacion {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.pagination:empty {
+  display: none;
+}
+
+.paginacion {
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.paginacion li {
+  list-style: none;
+}
+
+.pagination .page-btn,
+.pagination .paginacion a {
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--navy);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 13px;
+  height: 36px;
+  justify-content: center;
+  min-width: 36px;
+  padding: 0 12px;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.pagination .page-btn:hover,
+.pagination .paginacion a:hover {
+  background: #F5F7FA;
+  border-color: var(--navy);
+}
+
+.pagination .page-btn.active,
+.pagination .paginacion a.activa {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+.pagination .page-btn:disabled,
+.pagination .paginacion a.disabled {
+  cursor: default;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.pagination .paginacion li.puntos {
+  align-items: center;
+  color: var(--navy);
+  display: inline-flex;
+  font-size: 13px;
+  justify-content: center;
+  min-width: 20px;
+}
+
+/* Modo oscuro — la base global de paginacion vive en home.css; aqui solo
+   se pisan los colores que este archivo fija de forma literal. */
+html.high-contrast .pagination .page-btn,
+html.high-contrast .pagination .paginacion a {
+  background: var(--dk-surface-2);
+  border-color: var(--dk-border-strong);
+  color: var(--dk-text);
+}
+
+html.high-contrast .pagination .page-btn:hover,
+html.high-contrast .pagination .paginacion a:hover {
+  background: var(--dk-surface-3);
+  border-color: var(--dk-gold);
+  color: var(--dk-gold);
+}
+
+html.high-contrast .pagination .page-btn.active,
+html.high-contrast .pagination .paginacion a.activa {
+  background: var(--dk-blue);
+  border-color: var(--dk-blue);
+  color: #FFFFFF;
+}
+
+html.high-contrast .pagination .page-btn:disabled,
+html.high-contrast .pagination .paginacion a.disabled {
+  color: var(--dk-text-3);
+  opacity: 0.55;
+}
+
+html.high-contrast .pagination .paginacion li.puntos {
+  color: var(--dk-text-3);
+}

@@ -1,0 +1,12 @@
+tabla,id,valor_anterior,valor_nuevo
+noticias,1,/fundaciondu/public/uploads/img_6ab9a2227387c2.24987172.jpg,/uploads/img_6ab9a2227387c2.24987172.jpg
+noticias,2,/fundaciondu/public/uploads/img_6ab9a248975e03.26850616.jpg,/uploads/img_6ab9a248975e03.26850616.jpg
+noticias,3,/fundaciondu/public/uploads/img_6ab9a26cb875e9.68566836.jpg,/uploads/img_6ab9a26cb875e9.68566836.jpg
+programas,1,/fundaciondu/public/uploads/img_6ab9a0d56060c2.33980681.webp,/uploads/img_6ab9a0d56060c2.33980681.webp
+programas,2,/fundaciondu/public/uploads/img_6ab9a10089d896.49830810.jpg,/uploads/img_6ab9a10089d896.49830810.jpg
+programas,3,/fundaciondu/public/uploads/img_6ab9a126d2a6a9.90926589.jpg,/uploads/img_6ab9a126d2a6a9.90926589.jpg
+programas,4,/fundaciondu/public/uploads/img_6ab9a163f23333.78898010.jpg,/uploads/img_6ab9a163f23333.78898010.jpg
+programas,5,/fundaciondu/public/uploads/img_6ab9a18030d6b7.97553433.jpg,/uploads/img_6ab9a18030d6b7.97553433.jpg
+programas,6,/fundaciondu/public/uploads/img_6ab9a19fcf60d9.67550403.jpg,/uploads/img_6ab9a19fcf60d9.67550403.jpg
+eventos,3,/fundaciondu/public/uploads/event_4296b0805906b43fea2536b50ba7f126.jpg,/uploads/event_4296b0805906b43fea2536b50ba7f126.jpg
+programas.docentes,6,"[{""foto"":""/fundaciondu/public/uploads/img_6aba9fd34fbbf5.91496052.jpg"",""nombre"":""Enrique"",""cargo"":""Docente"",""descripcion"":""Docente"",""correo"":""enrique@gmail.com"",""linkedin"":null}]","[{""foto"":""/uploads/img_6aba9fd34fbbf5.91496052.jpg"",""nombre"":""Enrique"",""cargo"":""Docente"",""descripcion"":""Docente"",""correo"":""enrique@gmail.com"",""linkedin"":null}]"

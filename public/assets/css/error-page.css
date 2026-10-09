@@ -1,0 +1,96 @@
+.error-page {
+  align-items: center;
+  background: #f6f3f2;
+  display: flex;
+  justify-content: center;
+  min-height: min(62vh, 620px);
+  padding: clamp(28px, 7vw, 64px) 20px;
+}
+
+.error-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 30, 64, 0.08);
+  max-width: 620px;
+  padding: clamp(28px, 7vw, 48px) clamp(20px, 6vw, 40px);
+  text-align: center;
+  width: 100%;
+}
+
+.error-code {
+  color: #b68b01;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin: 0 0 12px;
+}
+
+.error-card h1 {
+  color: #062f4f;
+  font-size: clamp(26px, 5vw, 36px);
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.error-card > p:not(.error-code) {
+  color: #4b556a;
+  line-height: 1.7;
+  margin: 0 0 28px;
+}
+
+.error-home-link {
+  background: #062f4f;
+  border-radius: 8px;
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  padding: 12px 22px;
+}
+
+.error-home-link:focus-visible {
+  outline: 3px solid #b68b01;
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .error-page {
+    min-height: 0;
+    padding: 30px 18px 40px;
+  }
+
+  .error-card {
+    border-radius: 14px;
+  }
+
+  .error-code {
+    font-size: 13px;
+  }
+
+  .error-card h1 {
+    font-size: clamp(27px, 8vw, 34px);
+  }
+
+  .error-card > p:not(.error-code) {
+    font-size: 16px;
+  }
+}
+
+html.high-contrast .error-page {
+  background: var(--dk-bg) !important;
+}
+
+html.high-contrast .error-card {
+  background: var(--dk-surface) !important;
+  border-color: var(--dk-border) !important;
+}
+
+html.high-contrast .error-card h1,
+html.high-contrast .error-card > p:not(.error-code) {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .error-home-link {
+  background: var(--dk-gold) !important;
+  color: var(--dk-bg) !important;
+}

@@ -1,0 +1,34 @@
+# Carpeta de archivos subidos por los usuarios (imagenes de noticias, programas,
+# eventos, miembros y convenios).
+#
+# Esta carpeta NUNCA debe ejecutar codigo. Si alguien sube un archivo con extension
+# .php y Apache lo interpreta, tendria ejecucion remota con los permisos del
+# servidor web. Los archivos aqui solo se sirven como imagenes.
+#
+# AllowOverride en httpd.conf debe permitir Limit/FileInfo/AuthConfig (o None con
+# este archivo enabled). XAMPP viene con AllowOverride All en el VirtualHost.
+
+# Apaga el interprete de PHP en esta carpeta y sus subcarpetas.
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
+
+# Sin listados de directorio: si se pide /uploads/ no se enumerate su contenido.
+Options -Indexes -ExecCGI
+
+# Negar por completo cualquier archivo con extension ejecutable, sea cual sea.
+<FilesMatch "(?i)\.(php|phtml|php3|php4|php5|php7|php8|phps|phar|cgi|pl|py|rb|sh|bash|exe|com|bat|cmd|asp|aspx|jsp|htaccess)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>

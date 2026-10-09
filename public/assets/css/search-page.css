@@ -1,0 +1,173 @@
+.global-search-page {
+  background: #f5f3f2;
+  min-height: 55vh;
+}
+
+.global-search-heading {
+  margin: 14px 0 28px;
+}
+
+.global-search-heading .eyebrow {
+  color: #765b00;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.global-search-heading .page-title {
+  color: #062f4f;
+  margin: 8px 0 12px;
+}
+
+.global-search-query {
+  color: #43474f;
+  margin: 0;
+}
+
+.global-search-query strong {
+  color: #062f4f;
+  overflow-wrap: anywhere;
+}
+
+.global-search-status,
+.global-search-warning {
+  color: #43474f;
+  margin: 0 0 18px;
+}
+
+.global-search-warning {
+  color: #765b00;
+  font-size: 14px;
+}
+
+.global-search-results {
+  display: grid;
+  gap: 30px;
+}
+
+.search-results-group h2 {
+  border-bottom: 1px solid rgba(6, 47, 79, 0.14);
+  color: #062f4f;
+  font-size: 22px;
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+}
+
+.search-results-list {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
+}
+
+.search-result-card {
+  background: #fff;
+  border: 1px solid #d9dfe5;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 18px;
+}
+
+.search-result-card h3 {
+  color: #062f4f;
+  font-size: 18px;
+  line-height: 1.35;
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}
+
+.search-result-type {
+  color: #765b00;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.search-result-card p {
+  color: #43474f;
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0 0 16px;
+}
+
+.search-result-card .search-result-link {
+  align-self: flex-start;
+  color: #062f4f;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: auto;
+  text-decoration: underline;
+  text-decoration-color: #fecf4f;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.search-result-card .search-result-link:hover {
+  color: #765b00;
+}
+
+/* ============================================================
+   MODO OSCURO — html.high-contrast
+   ============================================================ */
+
+html.high-contrast .global-search-page {
+  background-color: var(--dk-bg) !important;
+}
+
+html.high-contrast .global-search-heading .eyebrow {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .global-search-heading .page-title {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .global-search-query,
+html.high-contrast .global-search-status {
+  color: var(--dk-text-2) !important;
+}
+
+html.high-contrast .global-search-query strong {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .global-search-warning {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .search-results-group h2 {
+  color: var(--dk-text) !important;
+  border-bottom: 1px solid var(--dk-border) !important;
+}
+
+html.high-contrast .search-result-card {
+  background: var(--dk-surface) !important;
+  border: 1px solid var(--dk-border) !important;
+}
+
+html.high-contrast .search-result-card:hover {
+  border-color: var(--dk-gold) !important;
+}
+
+html.high-contrast .search-result-card h3 {
+  color: var(--dk-text) !important;
+}
+
+html.high-contrast .search-result-card p {
+  color: var(--dk-text-2) !important;
+}
+
+html.high-contrast .search-result-type {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .search-result-card .search-result-link {
+  color: var(--dk-gold) !important;
+}
+
+html.high-contrast .search-result-card .search-result-link:hover {
+  color: var(--dk-gold-soft) !important;
+}

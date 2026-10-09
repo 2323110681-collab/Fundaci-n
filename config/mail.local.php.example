@@ -1,0 +1,6 @@
+<?php
+
+return array(
+    'CONTACT_DESTINATION_EMAIL' => 'ronalmonge45@gmail.com',
+    'CONTACT_SENDER_EMAIL' => 'informes@fundaciondu.org',
+);

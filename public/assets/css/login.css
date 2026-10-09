@@ -1,0 +1,74 @@
+html, body {
+  min-height: 100%;
+}
+
+.login-body {
+  background: url('../images/hero-main-background.png') center/cover no-repeat fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.login-page-wrapper {
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.12);
+  border-radius: 28px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 32px;
+}
+
+.login-card h1 {
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.login-card p {
+  color: #475569;
+}
+
+.login-card .input-field {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.login-card .input-field:focus {
+  outline: none;
+  border-color: #fb923c;
+  box-shadow: 0 0 0 4px rgba(251, 146, 60, 0.16);
+}
+
+.login-card button.btn-primary {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  font-weight: 600;
+}
+
+.login-card #loginMessage {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .login-page-wrapper {
+    padding: 16px;
+  }
+  .login-card {
+    border-radius: 24px;
+    padding: 24px;
+  }
+}

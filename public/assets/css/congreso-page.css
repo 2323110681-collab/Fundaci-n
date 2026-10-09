@@ -1,0 +1,1392 @@
+.congress-page {
+  background: #f7f8fb;
+  color: #26364a;
+  padding-bottom: 64px;
+}
+
+.congress-catalog-page {
+  background: #fafafa;
+  padding-bottom: 56px;
+  padding-top: 24px;
+}
+
+.congress-catalog-page .programs-header {
+  margin-bottom: 24px;
+}
+
+.congress-catalog-filters {
+  align-items: center;
+  background: linear-gradient(135deg, #f8f9fc 0%, #f5f7fb 100%);
+  border: 1px solid #e8eaf0;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding: 12px 20px;
+}
+
+.congress-catalog-filters .filter-select {
+  min-width: 150px;
+}
+
+.congress-catalog-filters input[type="search"] {
+  flex: 1 1 220px;
+}
+
+.congress-catalog-filters .btn-clear-filters {
+  margin-left: auto;
+}
+
+.congress-catalog-image {
+  align-items: center;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.congress-catalog-image img {
+  height: calc(100% - 32px);
+  max-width: calc(100% - 32px);
+  object-fit: contain;
+  width: auto;
+}
+
+.congress-catalog-card .program-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.congress-catalog-card .program-partner {
+  margin-top: auto;
+}
+
+.congress-catalog-card .link-gold {
+  align-self: flex-start;
+  margin-top: 14px;
+}
+
+.congress-catalog-empty {
+  color: #5a667f;
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.congress-hero {
+  background: #001e40;
+  color: #fff;
+  padding: 64px 0;
+}
+
+.congress-hero-inner {
+  align-items: center;
+  display: grid;
+  gap: clamp(28px, 6vw, 72px);
+  grid-template-columns: minmax(180px, 310px) minmax(0, 1fr);
+}
+
+.congress-logo {
+  aspect-ratio: 1;
+  background: #07111c;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 22px;
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+  width: 310px;
+}
+
+.congress-hero-copy h1 {
+  color: #fff;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.08;
+  margin: 0 0 14px;
+}
+
+.congress-hero-copy > p:not(.congress-eyebrow) {
+  color: #e4edf5;
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 14px 0 24px;
+  max-width: 660px;
+}
+
+.congress-eyebrow {
+  color: #b68b01;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.congress-hero .congress-eyebrow {
+  color: #ffd75e;
+}
+
+.congress-subtitle {
+  color: #ffd75e;
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 600;
+  margin: 0;
+}
+
+.congress-primary-link {
+  background: #f5c542;
+  border-radius: 8px;
+  color: #062f4f;
+  display: inline-flex;
+  font-weight: 700;
+  padding: 12px 18px;
+  text-decoration: none;
+}
+
+.congress-primary-link-disabled {
+  align-items: center;
+  background: #e8f3ff;
+  border: 1px solid #cfe3ff;
+  color: #0d4a7b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.congress-primary-link:hover,
+.congress-primary-link:focus-visible {
+  background: #ffda67;
+  color: #062f4f;
+}
+
+.congress-content {
+  padding-top: 32px;
+}
+
+.congress-facts {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.congress-fact,
+.congress-fee-card,
+.congress-payment-card {
+  background: #fff;
+  border: 1px solid #e0e6ed;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(6, 47, 79, 0.05);
+}
+
+.congress-fact {
+  display: grid;
+  gap: 6px;
+  padding: 18px 20px;
+}
+
+.congress-fact span,
+.congress-payment-card dt {
+  color: #5a667f;
+  font-size: 13px;
+}
+
+.congress-fact strong {
+  color: #062f4f;
+  font-size: 18px;
+}
+
+.congress-pending-note {
+  background: #fff8df;
+  border-left: 4px solid #d1a52f;
+  border-radius: 4px 10px 10px 4px;
+  color: #624d13;
+  line-height: 1.65;
+  margin: 18px 0 0;
+  padding: 14px 18px;
+}
+
+.congress-section {
+  margin-top: 64px;
+}
+
+.congress-section-heading {
+  margin-bottom: 26px;
+}
+
+.congress-section-heading h2,
+.congress-sponsors h2,
+.congress-contact h2 {
+  color: #062f4f;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.congress-section-heading > p:last-child,
+.congress-sponsors > p {
+  color: #5a667f;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.congress-country + .congress-country {
+  margin-top: 42px;
+}
+
+.congress-country > h3 {
+  border-bottom: 1px solid #dfe5ec;
+  color: #062f4f;
+  font-size: 21px;
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+}
+
+.congress-speaker-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.congress-speaker-card {
+  background: #fff;
+  border: 1px solid #e0e6ed;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(6, 47, 79, 0.05);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.congress-speaker-photo {
+  aspect-ratio: 4 / 3;
+  background: #e8edf2;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.congress-speaker-photo-placeholder {
+  align-items: center;
+  color: #062f4f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.congress-speaker-photo-placeholder span {
+  font-size: 38px;
+}
+
+.congress-speaker-photo-placeholder small {
+  font-size: 13px;
+}
+
+.congress-speaker-copy {
+  padding: 18px;
+}
+
+.congress-speaker-country {
+  color: #8c6a00;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 7px;
+}
+
+.congress-speaker-copy h4 {
+  color: #062f4f;
+  font-size: 18px;
+  line-height: 1.35;
+  margin: 0 0 7px;
+}
+
+.congress-speaker-institution {
+  color: #5a667f;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+
+.congress-speaker-bio {
+  border-top: 1px solid #e7ebf0;
+  color: #435267;
+  font-size: 14px;
+  line-height: 1.65;
+  padding-top: 12px;
+}
+
+.congress-speaker-bio summary {
+  color: #075078;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.congress-speaker-bio p {
+  margin: 12px 0 0;
+}
+
+.congress-speaker-biography img {
+  border-radius: 8px;
+  height: auto;
+  margin: 12px 0;
+  max-width: 100%;
+}
+
+.congress-speaker-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.congress-speaker-links a {
+  border: 1px solid #c9d7e3;
+  border-radius: 999px;
+  color: #075078;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+  text-decoration: none;
+}
+
+.congress-speaker-links a:hover,
+.congress-speaker-links a:focus-visible {
+  background: #edf5fa;
+  border-color: #075078;
+}
+
+.congress-fee-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.congress-fee-card {
+  padding: 20px;
+}
+
+.congress-fee-card h3 {
+  color: #435267;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.congress-fee-card strong {
+  color: #062f4f;
+  font-size: 26px;
+}
+
+.congress-certification-list {
+  color: #435267;
+  line-height: 1.7;
+  margin: 20px 0 0;
+  padding-left: 22px;
+}
+
+.congress-payment-card {
+  max-width: 680px;
+  padding: 26px;
+}
+
+.congress-payment-card h3 {
+  color: #062f4f;
+  font-size: 19px;
+  margin: 0 0 12px;
+}
+
+.congress-payment-card dl {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 24px;
+}
+
+.congress-payment-card dl > div {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: minmax(125px, 0.45fr) minmax(0, 1fr);
+}
+
+.congress-payment-card dd {
+  color: #26364a;
+  font-weight: 600;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.congress-payment-card > p {
+  color: #26364a;
+  line-height: 1.6;
+}
+
+.congress-registration-cta {
+  margin-top: 32px;
+}
+
+.congress-registration-card {
+  align-items: center;
+  background: #f6f7f8;
+  border: 1px solid #dfeaf4;
+  border-radius: 20px;
+  display: flex;
+  gap: 28px;
+  justify-content: space-between;
+  padding: clamp(20px, 3vw, 30px);
+}
+
+.congress-registration-copy {
+  display: grid;
+  gap: 10px;
+  max-width: 580px;
+}
+
+.congress-registration-copy .congress-eyebrow {
+  color: #8c6a00;
+  letter-spacing: 0.14em;
+}
+
+.congress-registration-copy h2 {
+  color: #062f4f;
+  font-size: clamp(24px, 2vw, 32px);
+  margin: 0;
+}
+
+.congress-registration-copy p:last-of-type {
+  color: #435267;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.congress-registration-qr {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #dfeaf4;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(6, 47, 79, 0.08);
+  display: inline-flex;
+  justify-content: center;
+  min-width: 180px;
+  padding: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.congress-registration-qr:hover,
+.congress-registration-qr:focus-visible {
+  box-shadow: 0 12px 28px rgba(6, 47, 79, 0.12);
+  transform: translateY(-2px);
+}
+
+.congress-registration-qr img {
+  display: block;
+  height: 180px;
+  object-fit: contain;
+  width: 180px;
+}
+
+.congress-payment-note {
+  background: #fff8df;
+  border-radius: 8px;
+  color: #624d13 !important;
+  font-size: 13px;
+  margin: 18px 0 0;
+  padding: 12px 14px;
+}
+
+@media (max-width: 640px) {
+  .congress-registration-card {
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .congress-registration-copy {
+    justify-items: center;
+  }
+}
+
+.congress-sponsors {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
+
+.congress-sponsors > div:first-child {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.congress-sponsors .congress-eyebrow {
+  color: #8c6a00;
+  letter-spacing: 0.14em;
+}
+
+.congress-sponsors h2 {
+  font-size: clamp(22px, 2.5vw, 30px);
+  margin-bottom: 0;
+}
+
+.congress-sponsor-list {
+  align-items: center;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.congress-sponsor-card {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: #062f4f;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  gap: 12px;
+  justify-content: center;
+  min-width: 0;
+  padding: 8px;
+  text-align: center;
+}
+
+.congress-sponsor-card img {
+  height: 90px;
+  max-width: 190px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.congress-sponsor-card strong {
+  overflow-wrap: anywhere;
+}
+
+.congress-sponsor-card p {
+  color: #5a667f;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.congress-contact {
+  background: #062f4f;
+  border-radius: 16px;
+  color: #fff;
+  margin-top: 64px;
+  padding: clamp(24px, 5vw, 44px);
+}
+
+.congress-contact h2 {
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.congress-contact-list {
+  display: grid;
+  gap: 16px;
+  max-width: 620px;
+}
+
+.congress-contact-item {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  gap: 14px;
+  line-height: 1.5;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.congress-contact-item svg {
+  fill: none;
+  flex: 0 0 28px;
+  height: 28px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  width: 28px;
+}
+
+.congress-contact-item span {
+  overflow-wrap: anywhere;
+}
+
+html.high-contrast .congress-page {
+  background: var(--dk-bg);
+  color: var(--dk-text);
+}
+
+html.high-contrast .congress-section-heading h2,
+html.high-contrast .congress-sponsors h2,
+html.high-contrast .congress-contact h2,
+html.high-contrast .congress-country > h3,
+html.high-contrast .congress-speaker-copy h4,
+html.high-contrast .congress-payment-card h3,
+html.high-contrast .congress-fee-card strong,
+html.high-contrast .congress-fact strong {
+  color: var(--dk-text);
+}
+
+html.high-contrast .congress-fact,
+html.high-contrast .congress-fee-card,
+html.high-contrast .congress-payment-card,
+html.high-contrast .congress-speaker-card,
+html.high-contrast .congress-sponsors,
+html.high-contrast .congress-sponsor-card {
+  background: var(--dk-surface);
+  border-color: var(--dk-border);
+  color: var(--dk-text);
+}
+
+html.high-contrast .congress-sponsor-card {
+  background: transparent;
+  border-color: transparent;
+}
+
+html.high-contrast .congress-speaker-bio,
+html.high-contrast .congress-speaker-institution,
+html.high-contrast .congress-certification-list,
+html.high-contrast .congress-section-heading > p:last-child,
+html.high-contrast .congress-sponsors > p,
+html.high-contrast .congress-fee-card h3,
+html.high-contrast .congress-fact span,
+html.high-contrast .congress-payment-card dt,
+html.high-contrast .congress-payment-card dd,
+html.high-contrast .congress-payment-card > p,
+html.high-contrast .congress-sponsor-card p,
+html.high-contrast .congress-catalog-empty {
+  color: var(--dk-text-2);
+}
+
+html.high-contrast .congress-catalog-filters {
+  background: var(--dk-surface);
+  border-color: var(--dk-border);
+  box-shadow: var(--dk-shadow);
+  color: var(--dk-text);
+}
+
+html.high-contrast .congress-catalog-filters .filter-label {
+  color: var(--dk-text-2);
+}
+
+html.high-contrast .congress-catalog-filters .filter-select {
+  background-color: var(--dk-bg);
+  border-color: var(--dk-border-strong);
+  color: var(--dk-text);
+}
+
+html.high-contrast .congress-catalog-image {
+  background: var(--dk-surface-2);
+}
+
+html.high-contrast .congress-catalog-card .program-card-body,
+html.high-contrast .congress-catalog-card .program-card-body p,
+html.high-contrast .congress-catalog-card .program-card-body h3 {
+  color: var(--dk-text);
+}
+
+html.high-contrast .congress-catalog-card .program-partner {
+  color: var(--dk-text-2);
+}
+
+html.high-contrast .congress-pending-note,
+html.high-contrast .congress-payment-note {
+  background: #332b13;
+  border-color: var(--dk-gold);
+  color: #f5df9a !important;
+}
+
+html.high-contrast .congress-pending-note a {
+  color: var(--dk-gold-soft) !important;
+}
+
+html.high-contrast .congress-page .congress-eyebrow {
+  color: var(--dk-gold);
+}
+
+html.high-contrast .congress-primary-link {
+  background: var(--dk-gold);
+  color: #172233 !important;
+}
+
+html.high-contrast .congress-primary-link:hover,
+html.high-contrast .congress-primary-link:focus-visible {
+  background: var(--dk-gold-soft);
+  color: #172233 !important;
+}
+
+html.high-contrast .congress-country > h3,
+html.high-contrast .congress-speaker-bio {
+  border-color: var(--dk-border);
+}
+
+html.high-contrast .congress-speaker-photo-placeholder {
+  background: var(--dk-surface-2);
+  color: var(--dk-text);
+}
+
+html.high-contrast .congress-speaker-bio summary,
+html.high-contrast .congress-speaker-links a {
+  color: var(--dk-gold-soft);
+}
+
+html.high-contrast .congress-speaker-links a {
+  border-color: var(--dk-border-strong);
+}
+
+html.high-contrast .congress-speaker-links a:hover,
+html.high-contrast .congress-speaker-links a:focus-visible {
+  background: var(--dk-surface-2);
+  border-color: var(--dk-gold);
+}
+
+@media (max-width: 900px) {
+  .congress-speaker-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .congress-fee-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .congress-sponsor-list {
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .congress-hero {
+    padding: 38px 0;
+  }
+
+  .congress-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .congress-logo {
+    margin: 0 auto;
+    max-width: 230px;
+  }
+
+  .congress-facts,
+  .congress-speaker-grid,
+  .congress-fee-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .congress-section {
+    margin-top: 44px;
+  }
+
+  .congress-payment-card dl > div {
+    grid-template-columns: 1fr;
+  }
+
+  .congress-sponsors {
+    grid-template-columns: 1fr;
+  }
+
+  .congress-sponsor-list {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+/* ==========================================================
+   Mejoras visuales de la página del congreso
+   ========================================================== */
+.congress-page section[id] { scroll-margin-top: 110px; }
+
+/* ---- Hero ---- */
+.congress-hero {
+  background: #001e40;
+  overflow: hidden;
+  padding: 72px 0 120px;
+  position: relative;
+}
+
+.congress-hero-inner { position: relative; z-index: 1; }
+
+.congress-logo-frame {
+  background: #05080d;
+  border: 1px solid rgba(255, 215, 94, 0.4);
+  border-radius: 26px;
+  box-shadow: 0 0 0 6px rgba(255, 215, 94, 0.07), 0 28px 60px rgba(0, 0, 0, 0.45), 0 0 90px rgba(254, 207, 79, 0.18);
+  max-width: 310px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.congress-logo-frame .congress-logo {
+  aspect-ratio: 1;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  height: auto;
+  width: 100%;
+}
+
+.congress-hero-copy h1 { letter-spacing: -0.01em; text-wrap: balance; }
+
+.congress-hero-copy .congress-eyebrow {
+  align-items: center;
+  display: inline-flex;
+  gap: 10px;
+}
+
+.congress-hero-copy .congress-eyebrow::before {
+  background: #ffd75e;
+  content: "";
+  height: 2px;
+  width: 28px;
+}
+
+.congress-hero-copy > .congress-summary,
+.congress-hero-copy > .congress-intro {
+  color: #e4edf5;
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 16px 0 0;
+  max-width: 660px;
+}
+
+.congress-hero-copy > .congress-summary {
+  font-weight: 600;
+}
+
+.congress-hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+}
+
+.congress-hero-chips li {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 8px;
+  padding: 8px 14px;
+}
+
+.congress-hero-chips svg {
+  fill: none;
+  flex: 0 0 auto;
+  height: 17px;
+  stroke: #ffd75e;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  width: 17px;
+}
+
+.congress-hero-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.congress-primary-link {
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(245, 197, 66, 0.28);
+  padding: 14px 24px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.congress-primary-link:hover { box-shadow: 0 14px 30px rgba(245, 197, 66, 0.38); transform: translateY(-2px); }
+
+.congress-secondary-link {
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+  color: #fff;
+  display: inline-flex;
+  font-weight: 700;
+  padding: 12.5px 22px;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.congress-secondary-link:hover,
+.congress-secondary-link:focus-visible { background: rgba(255, 255, 255, 0.12); border-color: #fff; color: #fff; }
+
+/* ---- Barra de secciones ---- */
+.congress-subnav {
+  background: #fff;
+  border: 1px solid #e0e6ed;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(6, 47, 79, 0.05);
+  margin-top: 18px;
+}
+
+.congress-subnav > div {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 8px;
+  scrollbar-width: none;
+}
+
+.congress-subnav > div::-webkit-scrollbar { display: none; }
+
+.congress-subnav a {
+  border-radius: 999px;
+  color: #435267;
+  flex: 0 0 auto;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.congress-subnav a:hover,
+.congress-subnav a:focus-visible { background: #edf5fa; color: #062f4f; }
+.congress-subnav a.is-active { background: #062f4f; color: #fff; }
+
+.congress-fee-grid { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+
+/* ---- Datos principales ---- */
+.congress-content { padding-top: 0; }
+
+.congress-facts { margin-top: -52px; position: relative; z-index: 2; }
+
+.congress-fact {
+  align-items: center;
+  border-left: 4px solid #f5c542;
+  display: flex;
+  gap: 16px;
+  padding: 20px 22px;
+}
+
+.congress-fact > div { display: grid; gap: 4px; min-width: 0; }
+
+.congress-fact-icon {
+  align-items: center;
+  background: #edf5fa;
+  border-radius: 12px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 46px;
+  justify-content: center;
+  width: 46px;
+}
+
+.congress-fact-icon svg {
+  fill: none;
+  height: 22px;
+  stroke: #075078;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  width: 22px;
+}
+
+.congress-fact strong { font-size: 17px; line-height: 1.35; overflow-wrap: anywhere; }
+
+/* ---- Encabezados de sección ---- */
+.congress-section-heading h2::after {
+  background: #f5c542;
+  border-radius: 2px;
+  content: "";
+  display: block;
+  height: 4px;
+  margin-top: 12px;
+  width: 56px;
+}
+
+.congress-section { margin-top: 72px; }
+
+/* ---- Ponentes ---- */
+.congress-country > h3 { border-bottom: 2px solid #e7ebf0; }
+
+.congress-speaker-card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.congress-speaker-card:hover {
+  border-color: #c9d7e3;
+  box-shadow: 0 18px 38px rgba(6, 47, 79, 0.13);
+  transform: translateY(-4px);
+}
+
+.congress-speaker-photo { aspect-ratio: 1 / 1; object-position: center 20%; }
+
+.congress-speaker-copy { display: flex; flex: 1; flex-direction: column; }
+.congress-speaker-bio { margin-top: auto; }
+
+.congress-speaker-country {
+  background: #edf2f7;
+  border-radius: 999px;
+  color: #435267;
+  display: inline-block;
+  padding: 4px 10px;
+}
+
+.congress-speaker-bio summary {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.congress-speaker-bio summary::-webkit-details-marker { display: none; }
+
+.congress-speaker-bio summary::after {
+  content: "+";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.congress-speaker-bio[open] summary::after { content: "–"; }
+
+/* ---- Tarifas y certificaciones ---- */
+.congress-fee-card {
+  border-top: 4px solid #f5c542;
+  padding: 24px 22px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.congress-fee-card:hover { box-shadow: 0 16px 34px rgba(6, 47, 79, 0.12); transform: translateY(-3px); }
+.congress-fee-card strong { display: block; font-size: 30px; letter-spacing: -0.01em; }
+
+.congress-certifications {
+  background: #fff;
+  border: 1px solid #e0e6ed;
+  border-left: 4px solid #075078;
+  border-radius: 14px;
+  margin-top: 24px;
+  padding: 22px 26px;
+}
+
+.congress-certifications h3 { color: #062f4f; font-size: 18px; margin: 0 0 10px; }
+
+.congress-certification-body { color: #435267; line-height: 1.7; }
+.congress-certification-body > :first-child { margin-top: 0; }
+.congress-certification-body > :last-child { margin-bottom: 0; }
+.congress-certification-body ul,
+.congress-certification-body ol { padding-left: 22px; }
+
+/* ---- Medios de pago ---- */
+.congress-payment-card { border-top: 4px solid #075078; max-width: 720px; }
+
+.congress-payment-card dl > div {
+  align-items: center;
+  border-bottom: 1px dashed #dfe5ec;
+  padding-bottom: 12px;
+}
+
+.congress-payment-card dl > div:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.congress-payment-card dd {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.congress-yape {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.congress-copy {
+  background: #edf5fa;
+  border: 1px solid #c9d7e3;
+  border-radius: 8px;
+  color: #075078;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.congress-copy:hover,
+.congress-copy:focus-visible { background: #075078; color: #fff; }
+.congress-copy.is-copied { background: #e8f6ee; border-color: #8fd0aa; color: #17633a; }
+
+/* ---- Auspiciadores ---- */
+.congress-sponsors { box-shadow: none; }
+
+.congress-sponsor-list { align-items: center; }
+
+.congress-sponsor-card {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 8px;
+}
+
+.congress-sponsor-card:hover { box-shadow: none; transform: none; }
+.congress-sponsor-card img { background: transparent; border-radius: 0; padding: 0; }
+
+/* ---- Contacto ---- */
+.congress-contact {
+  align-items: start;
+  background: #001e40;
+  border-radius: 20px;
+  box-shadow: 0 22px 48px rgba(6, 47, 79, 0.22);
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(190px, .7fr) minmax(0, 1.6fr);
+  text-align: left;
+}
+
+.congress-contact-heading .congress-eyebrow {
+  color: #ffd75e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.congress-contact-heading h2 { margin: 0 0 10px; }
+
+.congress-contact-heading > p:last-child {
+  color: #d7e5f2;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 340px;
+}
+
+.congress-contact-list {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: none;
+}
+
+.congress-contact-item {
+  align-items: flex-start;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 14px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 174px;
+  padding: 18px 16px;
+  text-decoration: none;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+.congress-contact-item:hover,
+.congress-contact-item:focus-visible {
+  background: rgba(255, 255, 255, .14);
+  border-color: rgba(255, 215, 94, .72);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.congress-contact-item:hover .congress-contact-action,
+.congress-contact-item:focus-visible .congress-contact-action {
+  color: #ffe28a;
+  text-decoration: underline;
+}
+
+.congress-contact-icon {
+  align-items: center;
+  background: rgba(255, 255, 255, .12);
+  border-radius: 11px;
+  color: #ffd75e;
+  display: inline-flex;
+  flex: 0 0 44px;
+  height: 44px;
+  justify-content: center;
+  width: 44px;
+}
+
+.congress-contact-icon svg {
+  fill: none;
+  height: 23px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  width: 23px;
+}
+
+.congress-contact-whatsapp-icon {
+  background: transparent;
+  overflow: hidden;
+}
+
+.congress-contact-whatsapp-icon img {
+  border-radius: 10px;
+  display: block;
+  height: 40px;
+  object-fit: cover;
+  width: 40px;
+}
+
+.congress-contact-copy {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.congress-contact-copy small {
+  color: #b8cce0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.congress-contact-copy strong {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.congress-contact-action {
+  color: #ffd75e;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+html.high-contrast .congress-contact-item {
+  background: var(--dk-surface);
+  border-color: var(--dk-border-strong);
+}
+
+html.high-contrast .congress-contact-copy small { color: var(--dk-text-2); }
+
+@media (max-width: 900px) {
+  .congress-contact { grid-template-columns: 1fr; }
+  .congress-contact-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .congress-contact-list { grid-template-columns: 1fr; }
+  .congress-contact-item {
+    align-items: center;
+    flex-direction: row;
+    min-height: 0;
+    padding: 16px;
+  }
+  .congress-contact-copy { flex: 1; }
+}
+
+/* ---- Modo oscuro (página pública) ---- */
+html.high-contrast .congress-subnav {
+  background: var(--dk-surface);
+  border-color: var(--dk-border);
+  box-shadow: var(--dk-shadow);
+}
+
+html.high-contrast .congress-subnav a { color: var(--dk-text-2) !important; }
+
+html.high-contrast .congress-subnav a:hover,
+html.high-contrast .congress-subnav a:focus-visible { background: var(--dk-surface-2); color: var(--dk-text) !important; }
+
+html.high-contrast .congress-subnav a.is-active { background: var(--dk-gold); color: #172233 !important; }
+
+html.high-contrast .congress-secondary-link,
+html.high-contrast .congress-secondary-link:hover,
+html.high-contrast .congress-secondary-link:focus-visible { color: #fff !important; }
+
+html.high-contrast .congress-fact { border-left-color: var(--dk-gold); }
+html.high-contrast .congress-fact-icon { background: var(--dk-surface-3); }
+html.high-contrast .congress-fact-icon svg { stroke: var(--dk-gold); }
+
+html.high-contrast .congress-speaker-country { background: var(--dk-surface-3); color: var(--dk-text-2); }
+html.high-contrast .congress-speaker-card:hover { border-color: var(--dk-border-strong); }
+
+html.high-contrast .congress-fee-card { border-top-color: var(--dk-gold); }
+
+html.high-contrast .congress-certifications {
+  background: var(--dk-surface);
+  border-color: var(--dk-border);
+  border-left-color: var(--dk-gold);
+}
+
+html.high-contrast .congress-certifications h3 { color: var(--dk-text); }
+html.high-contrast .congress-certification-body { color: var(--dk-text-2); }
+html.high-contrast .congress-certification-body a { color: var(--dk-gold-soft); }
+
+html.high-contrast .congress-payment-card { border-top-color: var(--dk-gold); }
+html.high-contrast .congress-payment-card dl > div { border-color: var(--dk-border); }
+
+html.high-contrast .congress-copy {
+  background: var(--dk-surface-3);
+  border-color: var(--dk-border-strong);
+  color: var(--dk-gold-soft);
+}
+
+html.high-contrast .congress-copy:hover,
+html.high-contrast .congress-copy:focus-visible { background: var(--dk-gold); color: #172233; }
+
+html.high-contrast .congress-copy.is-copied { background: #173326; border-color: #3f8f64; color: #9be0b8; }
+
+html.high-contrast .congress-sponsor-card { background: var(--dk-surface-2); border-color: var(--dk-border); }
+html.high-contrast .congress-sponsor-card strong { color: var(--dk-text); }
+
+html.high-contrast .congress-contact > a { background: var(--dk-gold); color: #172233 !important; }
+html.high-contrast .congress-contact > a:hover,
+html.high-contrast .congress-contact > a:focus-visible { background: var(--dk-gold-soft); }
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .congress-hero { padding: 56px 0 104px; }
+  .congress-facts { grid-template-columns: 1fr; margin-top: -44px; }
+}
+
+@media (max-width: 640px) {
+  .congress-hero { padding: 40px 0 92px; }
+  .congress-logo-frame { margin: 0 auto; max-width: 230px; }
+  .congress-hero-copy { text-align: center; }
+  .congress-hero-copy .congress-eyebrow::before { display: none; }
+  .congress-hero-chips,
+  .congress-hero-actions { justify-content: center; }
+  .congress-section { margin-top: 52px; }
+  .congress-fee-card strong { font-size: 26px; }
+  .congress-certifications { padding: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .congress-speaker-card,
+  .congress-fee-card,
+  .congress-sponsor-card,
+  .congress-primary-link { transition: none; }
+  .congress-speaker-card:hover,
+  .congress-fee-card:hover,
+  .congress-sponsor-card:hover,
+  .congress-primary-link:hover { transform: none; }
+}
+
+.congress-wallet-title {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.congress-wallet-title img {
+  border-radius: 8px;
+  flex: 0 0 auto;
+  height: 34px;
+  width: 34px;
+}
