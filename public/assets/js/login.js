@@ -52,6 +52,7 @@ function showLoginError(title, text) {
 // respuestas crudas ni confundir un 403 de permisos con uno de sesion caducada.
 function describeLoginError(status, json) {
   const code = json && typeof json.error === 'string' ? json.error : '';
+  const message = json && typeof json.message === 'string' ? json.message : '';
 
   if (status === 401) {
     return 'El usuario o la contraseña no son correctos.';
@@ -62,13 +63,15 @@ function describeLoginError(status, json) {
     }
     return 'Tu cuenta no tiene acceso al panel de administración.';
   }
+  if (status === 429) {
+    return message || 'La cuenta está bloqueada temporalmente. Inténtalo más tarde.';
+  }
   if (status === 400) {
     if (code === 'invalid recaptcha') {
       return 'Confirma que no eres un robot para iniciar sesión.';
     }
     return 'Completa el usuario y la contraseña para continuar.';
   }
-  const message = json && typeof json.message === 'string' ? json.message : '';
   return message || 'No se pudo iniciar sesión. Inténtalo nuevamente.';
 }
 
@@ -159,4 +162,3 @@ if (passwordInput) {
     }
   });
 }
-

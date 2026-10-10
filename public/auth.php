@@ -169,18 +169,32 @@ if ($method === 'POST') {
 
     $username = $_POST['username'] ?? null;
     $password = $_POST['password'] ?? null;
-    if (!$username || !$password) {
+    if (!is_string($username) || !is_string($password) || $username === '' || $password === '') {
         http_response_code(400);
         echo json_encode(['error' => 'username and password required']);
         exit;
     }
 
     $userModel = new User();
-    $user = $userModel->findByUsername($username);
+    $loginResult = $userModel->attemptLogin($username, $password);
+    if ($loginResult['status'] === 'locked') {
+        $retryAfter = (int) $loginResult['retry_after'];
+        $waitTime = $retryAfter >= 3600
+            ? max(1, (int) ceil($retryAfter / 3600)) . ' horas'
+            : max(1, (int) ceil($retryAfter / 60)) . ' minutos';
+        header('Retry-After: ' . $retryAfter);
+        http_response_code(429);
+        echo json_encode(array(
+            'error' => 'account temporarily locked',
+            'message' => 'Acceso bloqueado temporalmente. Inténtalo nuevamente en ' . $waitTime . '.',
+            'retry_after' => $retryAfter,
+        ));
+        exit;
+    }
 
-    if ($user && password_verify($password, $user['password'])) {
+    if ($loginResult['status'] === 'authenticated') {
         session_regenerate_id(true);
-        $_SESSION['user'] = ['id' => $user['id'], 'username' => $user['username'], 'role' => $user['role'] ?? 'editor'];
+        $_SESSION['user'] = $loginResult['user'];
         $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
         $token = getCsrfToken();
         echo json_encode(['ok' => true, 'user' => $_SESSION['user'], 'csrf_token' => $token]);
@@ -228,4 +242,3 @@ if ($method === 'GET') {
 
 http_response_code(405);
 echo json_encode(['error' => 'method not allowed']);
-
